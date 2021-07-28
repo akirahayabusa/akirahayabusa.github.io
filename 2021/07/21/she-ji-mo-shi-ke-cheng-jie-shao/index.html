@@ -466,14 +466,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-25
+                    2021-07-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    2.8k
                 </div>
                 
 
@@ -544,7 +544,8 @@
 <h2 id="3-1开闭原则"><a href="#3-1开闭原则" class="headerlink" title="3.1开闭原则"></a>3.1开闭原则</h2><p>​     <strong>对扩展开放，对修改关闭。</strong>在程序需要进行扩展的时候，不能去修改原有的代码，实现一个热插拔效果。简言之，是为了使程序的扩展性好，易于维护和升级。<br>​     为了达到这样的效果，我们需要使用到接口和抽象类。<br>​     因为抽象类灵活性好，适应性广，只要抽象合理，可以基本保持软件架构的稳定，而软件中易变的细节可以从抽象派生来的实现类来进行扩展，当软件需要发生变化时，只需要根据需求重新派生一个实现类来扩展就可以了。<br>下面以<code>搜狗拼音输入法</code>皮肤为例介绍开闭原则的应用。<br>​     【例子】<code>搜狗拼音输入法</code>的皮肤设计。<br>​     分析：<code>搜狗拼音输入法</code>的皮肤是输入法背景图片、窗口颜色和声音等元素的组合。用户可以根据自己的喜爱更换自己的输入法的皮肤，也可以从网上下载新的皮肤。这些皮肤有共同的特点可以为其定义一个抽象类（AbstractSkin)。而每个具体的皮肤（RyuHayabusaSkin）是其子类。用户窗体可以根据需要选择或增加新的主题，而需要修改原代码，所以它是满足开闭原则的。</p>
 <p><img src="/medias/article/20210725/image-20210724221234379.png" alt="image-20210724221234379"></p>
 <p>（注：图中搜狗输入法与抽象皮肤类之间的关系是聚合，画错了）</p>
-<h2 id="3-2里氏代换原则"><a href="#3-2里氏代换原则" class="headerlink" title="3.2里氏代换原则"></a>3.2里氏代换原则</h2><p>​     里氏代换原则是面向对象设计的基本原则之一。<br>​     里氏代换原则：任何积累可以出现的地方。子类一定可以出现。通俗理解：子类可以扩展父类的功能，但不能改变父类原有的功能。换句话说，子类继承父类时，除添加心得方法完成新增功能外，尽量不要重写父类的方法。<br>​     如果通过重写父类的来完成新的功能，这样写起来虽然简单，但是整体继承体系的可复用性会比较差，或者是运用多态比较频繁时，程序运行出错的概率会比较大。<br>​     经典例子：<br>【例】正方形不是长方形</p>
+<h2 id="3-2里氏代换原则"><a href="#3-2里氏代换原则" class="headerlink" title="3.2里氏代换原则"></a>3.2里氏代换原则</h2><p>​     里氏代换原则是面向对象设计的基本原则之一。<br>​     里氏代换原则：任何积累可以出现的地方。子类一定可以出现。通俗理解：子类可以扩展父类的功能，但不能改变父类原有的功能。换句话说，子类继承父类时，除添加心得方法完成新增功能外，尽量不要重写父类的方法。<br>​     如果通过重写父类的来完成新的功能，这样写起来虽然简单，但是整体继承体系的可复用性会比较差，或者是运用多态比较频繁时，程序运行出错的概率会比较大。<br>​     经典例子：<br>【例】正方形不是长方形<br>​     在数学领域里，正方形毫无疑问是长方形，它是一个长宽相等的长方形。所以，我们开发一个几何图形相关的软件系统，可以顺理成章的让正方形继承自矩形。</p>
+<p><img src="/medias/article/20210725/image-20210728234327425.png" alt="image-20210728234327425"></p>
 
                 
             </div>
@@ -780,17 +781,16 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/07/21/she-ji-mo-shi-ke-cheng-jie-shao/">
+                <a href="/2021/07/27/yu-yin-zhuan-wen-zi-fu-wu-tui-jian-yu-jian-dan-shi-yong/">
                     <div class="card-image">
                         
-                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="设计模式课程介绍">
+                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="语音转文字服务推荐与简单使用">
                         
-                        <span class="card-title">设计模式课程介绍</span>
+                        <span class="card-title">语音转文字服务推荐与简单使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -800,9 +800,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -815,12 +815,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">设计模式</span>
+                    <a href="/tags/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">技术工具</span>
                     </a>
                     
                 </div>
@@ -1069,7 +1068,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.6k</span>&nbsp;字
+                class="white-color">9.8k</span>&nbsp;字
             
             
             
