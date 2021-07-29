@@ -6,7 +6,7 @@
   <link href="https://akirahayabusa.github.io/atom.xml" rel="self"/>
   
   <link href="https://akirahayabusa.github.io/"/>
-  <updated>2021-07-27T16:25:56.993Z</updated>
+  <updated>2021-07-29T14:50:46.429Z</updated>
   <id>https://akirahayabusa.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>02php基础之网站基本概念</title>
+    <link href="https://akirahayabusa.github.io/2021/07/29/02php-ji-chu-zhi-wang-zhan-ji-ben-gai-nian/"/>
+    <id>https://akirahayabusa.github.io/2021/07/29/02php-ji-chu-zhi-wang-zhan-ji-ben-gai-nian/</id>
+    <published>2021-07-29T14:15:13.000Z</published>
+    <updated>2021-07-29T14:50:46.429Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-网站基本概念&quot;&gt;&lt;a href=&quot;#1-网站基本概念&quot; class=&quot;headerlink&quot; title=&quot;1.网站基本概念&quot;&gt;&lt;/a&gt;1.网站基本概念&lt;/h1&gt;&lt;h2 id=&quot;1-服务器概念&quot;&gt;&lt;a href=&quot;#1-服务器概念&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="设计模式" scheme="https://akirahayabusa.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01php基础之php简介</title>
+    <link href="https://akirahayabusa.github.io/2021/07/29/01php-ji-chu-zhi-php-jian-jie/"/>
+    <id>https://akirahayabusa.github.io/2021/07/29/01php-ji-chu-zhi-php-jian-jie/</id>
+    <published>2021-07-29T02:09:31.000Z</published>
+    <updated>2021-07-29T14:10:42.828Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;搭建环境&quot;&gt;&lt;a href=&quot;#搭建环境&quot; class=&quot;headerlink&quot; title=&quot;搭建环境&quot;&gt;&lt;/a&gt;搭建环境&lt;/h1&gt;&lt;h2 id=&quot;php简介&quot;&gt;&lt;a href=&quot;#php简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="php" scheme="https://akirahayabusa.github.io/tags/php/"/>
+    
+  </entry>
   
   <entry>
     <title>语音转文字服务推荐与简单使用</title>
