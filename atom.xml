@@ -6,7 +6,7 @@
   <link href="https://akirahayabusa.github.io/atom.xml" rel="self"/>
   
   <link href="https://akirahayabusa.github.io/"/>
-  <updated>2021-07-29T14:50:46.429Z</updated>
+  <updated>2021-08-01T16:11:44.372Z</updated>
   <id>https://akirahayabusa.github.io/</id>
   
   <author>
@@ -15,6 +15,70 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>01nodejs入门</title>
+    <link href="https://akirahayabusa.github.io/2021/08/01/nodejs-ru-men/"/>
+    <id>https://akirahayabusa.github.io/2021/08/01/nodejs-ru-men/</id>
+    <published>2021-08-01T04:41:14.000Z</published>
+    <updated>2021-08-01T16:11:44.372Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-初体验（REPL）&quot;&gt;&lt;a href=&quot;#1-初体验（REPL）&quot; class=&quot;headerlink&quot; title=&quot;1.初体验（REPL）&quot;&gt;&lt;/a&gt;1.初体验（REPL）&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;R(read)</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="nodejs" scheme="https://akirahayabusa.github.io/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01微信小程序介绍及环境准备</title>
+    <link href="https://akirahayabusa.github.io/2021/07/30/01-wei-xin-xiao-cheng-xu-jie-shao-ji-huan-jing-zhun-bei/"/>
+    <id>https://akirahayabusa.github.io/2021/07/30/01-wei-xin-xiao-cheng-xu-jie-shao-ji-huan-jing-zhun-bei/</id>
+    <published>2021-07-30T04:04:13.000Z</published>
+    <updated>2021-07-31T12:00:42.277Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-微信小程序介绍&quot;&gt;&lt;a href=&quot;#1-微信小程序介绍&quot; class=&quot;headerlink&quot; title=&quot;1.微信小程序介绍&quot;&gt;&lt;/a&gt;1.微信小程序介绍&lt;/h1&gt;&lt;p&gt;微信小程序，简称小程序，英文名Mini</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="微信小程序" scheme="https://akirahayabusa.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>03php基础之环境搭建</title>
+    <link href="https://akirahayabusa.github.io/2021/07/30/03php-ji-chu-zhi-huan-jing-da-jian/"/>
+    <id>https://akirahayabusa.github.io/2021/07/30/03php-ji-chu-zhi-huan-jing-da-jian/</id>
+    <published>2021-07-30T01:31:02.000Z</published>
+    <updated>2021-07-30T01:31:02.716Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>02php基础之网站基本概念</title>

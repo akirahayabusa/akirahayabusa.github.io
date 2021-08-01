@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="dubbo学习之分布式系统定义, 哈雅布撒的博客">
+    <meta name="keywords" content="01nodejs入门, 哈雅布撒的博客">
     <meta name="description" content="Hello,here is Hayabusa&#39;s blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>dubbo学习之分布式系统定义 | 哈雅布撒的博客</title>
+    <title>01nodejs入门 | 哈雅布撒的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -318,7 +318,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">dubbo学习之分布式系统定义</h1>
+                    <h1 class="description center-align post-title">01nodejs入门</h1>
                 </div>
             </div>
         </div>
@@ -434,12 +434,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
-                                <span class="chip bg-color">分布式</span>
-                            </a>
-                        
-                            <a href="/tags/dubbo/">
-                                <span class="chip bg-color">dubbo</span>
+                            <a href="/tags/nodejs/">
+                                <span class="chip bg-color">nodejs</span>
                             </a>
                         
                     </div>
@@ -463,28 +459,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-21
+                    2021-08-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-25
+                    2021-08-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -505,7 +501,50 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="1-初体验（REPL）"><a href="#1-初体验（REPL）" class="headerlink" title="1.初体验（REPL）"></a>1.初体验（REPL）</h1><ol>
+<li>R(read) 读取（读取用户输入的代码）</li>
+<li>E(exec) 执行 （执行用户输入的代码）</li>
+<li>P(print) 打印（打印用户输入的js代码）</li>
+<li>L(loop) 循环 (后续所有js代码执行都会循环以上命令)</li>
+<li>退出：ctrl+c<h2 id="1-1通过命令行运行js代码"><a href="#1-1通过命令行运行js代码" class="headerlink" title="1.1通过命令行运行js代码"></a>1.1通过命令行运行js代码</h2></li>
+<li>命令行输入node启动node后直接输入js代码</li>
+<li>命令行node xx.js运行js文件<br>（cls清屏）<h1 id="2-模块系统"><a href="#2-模块系统" class="headerlink" title="2.模块系统"></a>2.模块系统</h1>js三大组成部分：</li>
+<li>ecmascript(声明js变量，判断，循环等语法)</li>
+<li>dom(document)</li>
+<li>BOM(window，local等)<br>模块(http服务器等)<h2 id="2-1简介"><a href="#2-1简介" class="headerlink" title="2.1简介"></a>2.1简介</h2><h2 id="2-1-1使用Nodejs编写应用程序主要使用"><a href="#2-1-1使用Nodejs编写应用程序主要使用" class="headerlink" title="2.1.1使用Nodejs编写应用程序主要使用"></a>2.1.1使用Nodejs编写应用程序主要使用</h2></li>
+</ol>
+<ul>
+<li>ecmascript语法：变量、判断、循环等（js三大组成部分：ECMA/DOM/BOM）</li>
+<li>内置核心模块：http服务、fs文件操作、url路径、path路径处理、os操作系统</li>
+<li>第三方模块：</li>
+<li>自定义模块：自己创建的js文件<h2 id="2-2-2CommonJS模块模范"><a href="#2-2-2CommonJS模块模范" class="headerlink" title="2.2.2CommonJS模块模范"></a>2.2.2CommonJS模块模范</h2></li>
+<li>一个文件就是一个模块</li>
+<li>通过require来加载模块</li>
+<li>通过exports和modul.exports来到导出模块中的成员（声明模块中哪些功能可以使用）<h2 id="2-2自定义Node-js模块"><a href="#2-2自定义Node-js模块" class="headerlink" title="2.2自定义Node.js模块"></a>2.2自定义Node.js模块</h2><h2 id="2-2-1语法"><a href="#2-2-1语法" class="headerlink" title="2.2.1语法"></a>2.2.1语法</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">步骤1：导出成员（声明模块中/文件中哪些方法可以被外部使用）</span><br><span class="line">//写法1</span><br><span class="line">exports.属性/方法名=功能</span><br><span class="line">//写法2</span><br><span class="line">module.exports.属性/方法名=变量名</span><br><span class="line">步骤2：外部引入使用</span><br><span class="line">//使用：先引入再调用</span><br><span class="line">var 对象=require('路径及文件名')</span><br><span class="line">对象.属性或方法名</span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
+<p><img src="C:\Users\Hayabusa\AppData\Roaming\Typora\typora-user-images\image-20210801202634827.png" alt="image-20210801202634827"></p>
+<h2 id="2-3第三方模块"><a href="#2-3第三方模块" class="headerlink" title="2.3第三方模块"></a>2.3第三方模块</h2><h2 id="2-4Node-js内置模块"><a href="#2-4Node-js内置模块" class="headerlink" title="2.4Node.js内置模块"></a>2.4Node.js内置模块</h2><p><a target="_blank" rel="noopener" href="https://github.com/nodejs/node/tree/master/lib">内置模块</a><br><a target="_blank" rel="noopener" href="http://nodejs.cn/api/">api手册</a></p>
+<h3 id="2-4-1获取操作系统信息（os模块）-–了解"><a href="#2-4-1获取操作系统信息（os模块）-–了解" class="headerlink" title="2.4.1获取操作系统信息（os模块）  –了解"></a>2.4.1获取操作系统信息（os模块）  –了解</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 字节是计算机中的一种计量单位，表示数据量的多少 </span><br><span class="line">// 1字节（Byte）= 8位（bit）</span><br><span class="line">// 1KB = 1024Byte（字节）</span><br><span class="line">// 1MB = 1024KB</span><br><span class="line">// 1GB =  1024MB</span><br><span class="line">// 1TB =  1024GB</span><br><span class="line"></span><br><span class="line">//1.创建os对象（引入nodejs内置os模块）</span><br><span class="line">var os = require("os");</span><br><span class="line">//2.调用os对象方法获取系统数据</span><br><span class="line">console.log('hello，另起一行'		 + os.EOL		    + 'itcast');</span><br><span class="line">console.log('主机名: '		 + os.hostname());</span><br><span class="line">console.log('操作系统名: ' 	 + os.type());</span><br><span class="line">console.log('操作系统平台: ' + os.platform());</span><br><span class="line">console.log('内存总量: ' 	 + os.totalmem() 	+ " 字节.");</span><br><span class="line">console.log('空闲内存: ' 	 + os.freemem() 	+ " 字节.");</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-4-2路径处理（path模块）"><a href="#2-4-2路径处理（path模块）" class="headerlink" title="2.4.2路径处理（path模块）"></a>2.4.2路径处理（path模块）</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//dirname  去最后一个</span><br><span class="line">//basename 取最后一个</span><br><span class="line"></span><br><span class="line">//1.创建path对象（引入nodejs内置path模块）</span><br><span class="line">var path = require("path");</span><br><span class="line">//2.调用path对象方法</span><br><span class="line">var testData = 'c:/app/view/godos/add.html';</span><br><span class="line">console.log(path.extname(testData)); //取后缀（包括.）</span><br><span class="line">console.log(path.basename(testData));//取最后一层</span><br><span class="line">console.log(path.dirname(testData)); //去最后一层</span><br><span class="line">console.log(path.dirname(path.dirname(testData)));</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-4-3网址处理（url模块）"><a href="#2-4-3网址处理（url模块）" class="headerlink" title="2.4.3网址处理（url模块）"></a>2.4.3网址处理（url模块）</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//1.创建url对象（引入nodejs内置url模块）</span><br><span class="line">var url = require("url");</span><br><span class="line">//2.调用url对象方法</span><br><span class="line">var wangzhi = "http://itcast.cn?name=张三&amp;age=18";</span><br><span class="line">console.log(url.parse(wangzhi)); //解析网址</span><br><span class="line">console.log(url.parse(wangzhi, true)); //解析网址参数为对象</span><br><span class="line"></span><br><span class="line">var param = url.parse(wangzhi, true).query;</span><br><span class="line">console.log(param);</span><br><span class="line">console.log(param.name);</span><br><span class="line">console.log(param.age);</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-4-4文件处理（fs模块）"><a href="#2-4-4文件处理（fs模块）" class="headerlink" title="2.4.4文件处理（fs模块）"></a>2.4.4文件处理（fs模块）</h3><h4 id="2-4-4-1写入文件"><a href="#2-4-4-1写入文件" class="headerlink" title="2.4.4.1写入文件"></a>2.4.4.1写入文件</h4><p>语法：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//1.创建fs对象（引入node内置的fs模块）</span><br><span class="line">var fs = require('fs');</span><br><span class="line"></span><br><span class="line">//2.调用函数写数据进文件</span><br><span class="line">fs.writeFile(路径及文件名，数据，function(err){</span><br><span class="line">    err  为null - 则写入成功</span><br><span class="line">    err不为null - 则写入失败</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<p>练习：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//1.创建fs对象（引入node内置的fs模块）</span><br><span class="line">var fs = require('fs');</span><br><span class="line"></span><br><span class="line">//2.调用函数写数据进文件</span><br><span class="line">fs.writeFile('./a.txt', '你好，hybs', function(err) {</span><br><span class="line">    // err  为null - 则写入成功</span><br><span class="line">    // err不为null - 则写入失败</span><br><span class="line">    if (err) {</span><br><span class="line">    	console.log(err);</span><br><span class="line">    	return;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    console.log('写入成功');</span><br><span class="line">});</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="2-4-4-2读取文件"><a href="#2-4-4-2读取文件" class="headerlink" title="2.4.4.2读取文件"></a>2.4.4.2读取文件</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fs.readFile('../../data/data01.txt', 'utf-8', function(err,data) {    //不加解码类型会是buffer对象</span><br><span class="line">    // err  为null - 则写入成功</span><br><span class="line">    // err不为null - 则写入失败</span><br><span class="line">    if (err) {</span><br><span class="line">        console.log(err);</span><br><span class="line">        return;</span><br><span class="line">    }</span><br><span class="line">    console.log(data)</span><br><span class="line">    console.log('读取成功');</span><br><span class="line">    console.log(data.toString())   //通过buffer.tostring()转化为string类型</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-4-5引入http服务器并创建服务器"><a href="#2-4-5引入http服务器并创建服务器" class="headerlink" title="2.4.5引入http服务器并创建服务器"></a>2.4.5引入http服务器并创建服务器</h3><ol>
+<li>创建http服务器<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//说明</span><br><span class="line">//nodejs作用：1-提供JS运行环境，2-提供N多模块(API)让JS更强大</span><br><span class="line"></span><br><span class="line">//1.创建http对象（引入node内置的http模块）</span><br><span class="line">var http = require('http');</span><br><span class="line"></span><br><span class="line">//2.创建http服务器（调用http对象的createServer）</span><br><span class="line">var server = http.createServer();</span><br><span class="line"></span><br><span class="line">//3.监听用户请求</span><br><span class="line">server.on('request', function() {</span><br><span class="line">	console.log('收到客户端请求了');</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line">//4.启动服务器</span><br><span class="line">server.listen(8080, function(){</span><br><span class="line">	console.log('服务已启动，可以通过：http://localhost:8080 访问测试')</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure></li>
+<li>响应数据<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//1.创建http对象（引入node内置的http模块）</span><br><span class="line">var http = require('http');</span><br><span class="line"></span><br><span class="line">//2.创建http服务器（调用http对象的createServer）</span><br><span class="line">var server = http.createServer();</span><br><span class="line"></span><br><span class="line">//3.监听用户请求（形参：request-请求对象，response-响应对象）</span><br><span class="line">server.on('request', function(request, response) {</span><br><span class="line">	//有请求DOS窗口就输出</span><br><span class="line">	console.log('收到客户端请求了，请求路径是：' + request.url);</span><br><span class="line">	//响应请求</span><br><span class="line">	//write方法：声明给客户端发送的数据</span><br><span class="line">	//end方法：  结束响应</span><br><span class="line">	response.write('hello,');</span><br><span class="line">	response.write('itcast');</span><br><span class="line">	response.end();</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line">//4.启动服务器</span><br><span class="line">server.listen(8080, function(){</span><br><span class="line">	console.log('服务已启动，可以通过：http://localhost:8080 访问测试')</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure></li>
+<li>响应不同数据<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//1.创建http对象（引入node内置的http模块）</span><br><span class="line">var http = require('http');</span><br><span class="line"></span><br><span class="line">//2.创建http服务器（调用http对象的createServer）</span><br><span class="line">var server = http.createServer();</span><br><span class="line"></span><br><span class="line">//3.监听用户请求（形参：request-请求对象，response-响应对象）</span><br><span class="line">server.on('request', function(request, response) {</span><br><span class="line">	</span><br><span class="line">	//获取请求路径（注：默认请求站点根目录）</span><br><span class="line">	var url = request.url;</span><br><span class="line">	//判断请求路径</span><br><span class="line">	if (url == '/') {</span><br><span class="line">		var content = 'this is index';</span><br><span class="line">	} else if (url == '/login') {</span><br><span class="line">		var content = 'this is login';</span><br><span class="line">	} else {</span><br><span class="line">		var content = '404 Not Found';</span><br><span class="line">	}</span><br><span class="line">	//响应请求</span><br><span class="line">	response.write(content);</span><br><span class="line">	response.end();</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line">//4.启动服务器</span><br><span class="line">server.listen(8080, function(){</span><br><span class="line">	console.log('服务已启动，可以通过：http://localhost:8080 访问测试')</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure></li>
+<li>解决中文乱码<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//说明</span><br><span class="line">//nodejs作用：1-提供JS运行环境，2-提供N多模块(API)让JS更强大</span><br><span class="line"></span><br><span class="line">//1.创建http对象（引入node内置的http模块）</span><br><span class="line">var http = require('http');</span><br><span class="line"></span><br><span class="line">//2.创建http服务器（调用http对象的createServer）</span><br><span class="line">var server = http.createServer();</span><br><span class="line"></span><br><span class="line">//3.监听用户请求（形参：request-请求对象，response-响应对象）</span><br><span class="line">server.on('request', function(request, response) {</span><br><span class="line">	</span><br><span class="line">	//响应请求</span><br><span class="line">	response.setHeader('Content-Type', 'text/html; charset=utf-8');</span><br><span class="line">	response.write("哥哥来抓我呀，&lt;a href='http://nn.com'&gt;点击进入我的世界&lt;/a&gt;");</span><br><span class="line">	response.end();</span><br><span class="line">	</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line">//4.启动服务器</span><br><span class="line">server.listen(8080, function(){</span><br><span class="line">	console.log('服务已启动，可以通过：http://localhost:8080 访问测试')</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-4-6请求和响应对象"><a href="#2-4-6请求和响应对象" class="headerlink" title="2.4.6请求和响应对象"></a>2.4.6请求和响应对象</h3></li>
+<li>请求对象<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">req.headers     	获取请求头信息（对象）</span><br><span class="line">req.rawHeaders 	获取请求头信息（数组）</span><br><span class="line">req.httpVersion 	获取HTTP版本</span><br><span class="line">req.method			获取请求方法</span><br><span class="line">req.url         		获取请求路径（注：不含网址）</span><br></pre></td></tr></tbody></table></figure></li>
+<li>响应对象<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">res.statusCode = 404;</span><br><span class="line">res.statusMessage = 'Not Found';</span><br><span class="line">res.setHeader（'Content-Type', 'text/html; charset=utf-8'）</span><br><span class="line"></span><br><span class="line">//简化版</span><br><span class="line">res.writeHeader(404, 'Not Found', {</span><br><span class="line">	'Content-Type' : 'text/html; charset=utf8'</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line">res.write（数据）</span><br><span class="line">res.end()</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -531,7 +570,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://akirahayabusa.github.io/2021/02/21/dubbo-xue-xi-zhi-fen-bu-shi-xi-tong-ding-yi/">https://akirahayabusa.github.io/2021/02/21/dubbo-xue-xi-zhi-fen-bu-shi-xi-tong-ding-yi/</a>
+                    <a href="https://akirahayabusa.github.io/2021/08/01/nodejs-ru-men/">https://akirahayabusa.github.io/2021/08/01/nodejs-ru-men/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -569,12 +608,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
-                                    <span class="chip bg-color">分布式</span>
-                                </a>
-                            
-                                <a href="/tags/dubbo/">
-                                    <span class="chip bg-color">dubbo</span>
+                                <a href="/tags/nodejs/">
+                                    <span class="chip bg-color">nodejs</span>
                                 </a>
                             
                         </div>
@@ -744,16 +779,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/06/02/javaee-kao-qian-fu-xi-da-gang/">
+                <a href="/2021/08/01/nodejs-ru-men/">
                     <div class="card-image">
                         
-                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="javaee面试题">
+                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="01nodejs入门">
                         
-                        <span class="card-title">javaee面试题</span>
+                        <span class="card-title">01nodejs入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -763,26 +799,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" class="post-category">
-                                    面试题
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java%E9%9D%A2%E8%AF%95/">
-                        <span class="chip bg-color">java面试</span>
+                    <a href="/tags/nodejs/">
+                        <span class="chip bg-color">nodejs</span>
                     </a>
                     
                 </div>
@@ -796,12 +833,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/09/li-jie-liang-chong-jia-mi-fang-shi-zhong-si-yao-he-gong-yao-de-gai-nian/">
+                <a href="/2021/07/30/01-wei-xin-xiao-cheng-xu-jie-shao-ji-huan-jing-zhun-bei/">
                     <div class="card-image">
                         
-                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="理解两种加密方式中私钥和公钥的概念">
+                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="01微信小程序介绍及环境准备">
                         
-                        <span class="card-title">理解两种加密方式中私钥和公钥的概念</span>
+                        <span class="card-title">01微信小程序介绍及环境准备</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -812,14 +849,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E9%9A%8F%E7%AC%94/" class="post-category">
-                                    技术随笔
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -829,8 +866,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8A%A0%E5%AF%86/">
-                        <span class="chip bg-color">加密</span>
+                    <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">微信小程序</span>
                     </a>
                     
                 </div>
