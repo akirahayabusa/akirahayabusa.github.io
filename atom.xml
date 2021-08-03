@@ -6,7 +6,7 @@
   <link href="https://akirahayabusa.github.io/atom.xml" rel="self"/>
   
   <link href="https://akirahayabusa.github.io/"/>
-  <updated>2021-08-01T16:11:44.372Z</updated>
+  <updated>2021-08-03T06:00:04.623Z</updated>
   <id>https://akirahayabusa.github.io/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>maven以及npm依赖查找</title>
+    <link href="https://akirahayabusa.github.io/2021/08/03/maven-yi-ji-npm-yi-lai-cha-zhao/"/>
+    <id>https://akirahayabusa.github.io/2021/08/03/maven-yi-ji-npm-yi-lai-cha-zhao/</id>
+    <published>2021-08-03T05:55:57.000Z</published>
+    <updated>2021-08-03T06:00:04.623Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;maven仓库：&lt;br&gt;&lt;a href=&quot;https://mvnrepository.com/&quot;&gt;mvnrepository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;npm仓库：&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="技术工具" scheme="https://akirahayabusa.github.io/tags/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nodejs之npm</title>
+    <link href="https://akirahayabusa.github.io/2021/08/03/nodejs-zhi-npm/"/>
+    <id>https://akirahayabusa.github.io/2021/08/03/nodejs-zhi-npm/</id>
+    <published>2021-08-03T05:10:58.000Z</published>
+    <updated>2021-08-03T08:31:46.485Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;主要内容&quot;&gt;&lt;a href=&quot;#主要内容&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="nodejs" scheme="https://akirahayabusa.github.io/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>01nodejs入门</title>
     <link href="https://akirahayabusa.github.io/2021/08/01/nodejs-ru-men/"/>
     <id>https://akirahayabusa.github.io/2021/08/01/nodejs-ru-men/</id>
     <published>2021-08-01T04:41:14.000Z</published>
-    <updated>2021-08-01T16:11:44.372Z</updated>
+    <updated>2021-08-03T08:26:51.985Z</updated>
     
     
       
@@ -185,14 +237,14 @@
     <link href="https://akirahayabusa.github.io/2021/06/02/javaee-kao-qian-fu-xi-da-gang/"/>
     <id>https://akirahayabusa.github.io/2021/06/02/javaee-kao-qian-fu-xi-da-gang/</id>
     <published>2021-06-02T10:21:23.439Z</published>
-    <updated>2021-07-24T16:36:50.508Z</updated>
+    <updated>2021-08-03T08:39:48.345Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;考点范围&quot;&gt;&lt;a href=&quot;#考点范围&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;考点范围&quot;&gt;&lt;a href=&quot;#考点范围&quot; class=&quot;headerlink&quot; title=&quot;考点范围&quot;&gt;&lt;/a&gt;考点范围&lt;/h1&gt;&lt;h2 id=&quot;1-http常见的状态码以及这些状态码的意义&quot;&gt;&lt;a</summary>
         
       
     
