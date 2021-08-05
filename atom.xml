@@ -6,7 +6,7 @@
   <link href="https://akirahayabusa.github.io/atom.xml" rel="self"/>
   
   <link href="https://akirahayabusa.github.io/"/>
-  <updated>2021-08-03T06:00:04.623Z</updated>
+  <updated>2021-08-05T10:17:32.797Z</updated>
   <id>https://akirahayabusa.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nodejs之Express框架</title>
+    <link href="https://akirahayabusa.github.io/2021/08/05/nodejs-zhi-express-kuang-jia/"/>
+    <id>https://akirahayabusa.github.io/2021/08/05/nodejs-zhi-express-kuang-jia/</id>
+    <published>2021-08-04T16:00:40.000Z</published>
+    <updated>2021-08-05T10:17:32.797Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、Express简介&quot;&gt;&lt;a href=&quot;#一、Express简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="nodejs" scheme="https://akirahayabusa.github.io/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nodejs之常用第三方模块</title>
+    <link href="https://akirahayabusa.github.io/2021/08/03/nodejs-zhi-chang-yong-di-san-fang-mo-kuai/"/>
+    <id>https://akirahayabusa.github.io/2021/08/03/nodejs-zhi-chang-yong-di-san-fang-mo-kuai/</id>
+    <published>2021-08-03T10:00:38.000Z</published>
+    <updated>2021-08-05T10:35:04.765Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-nodemon自动重启服务（热部署）&quot;&gt;&lt;a href=&quot;#1-nodemon自动重启服务（热部署）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="nodejs" scheme="https://akirahayabusa.github.io/tags/nodejs/"/>
+    
+  </entry>
   
   <entry>
     <title>maven以及npm依赖查找</title>
