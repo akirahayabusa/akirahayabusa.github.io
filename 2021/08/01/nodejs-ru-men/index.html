@@ -466,21 +466,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-03
+                    2021-08-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 
@@ -544,7 +544,48 @@
 <li>响应对象<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">res.statusCode = 404;</span><br><span class="line">res.statusMessage = 'Not Found';</span><br><span class="line">res.setHeader（'Content-Type', 'text/html; charset=utf-8'）</span><br><span class="line"></span><br><span class="line">//简化版</span><br><span class="line">res.writeHeader(404, 'Not Found', {</span><br><span class="line">	'Content-Type' : 'text/html; charset=utf8'</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line">res.write（数据）</span><br><span class="line">res.end()</span><br></pre></td></tr></tbody></table></figure>
 （响应应查看mime类型）<h3 id="es6新特性"><a href="#es6新特性" class="headerlink" title="es6新特性"></a>es6新特性</h3></li>
 <li>es6标签替换<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var html1=``;</span><br><span class="line">    msgs.forEach(function (items) {</span><br><span class="line">        html1+=`&lt;li class="list-group-item"&gt;${items.name}：${items.content} &lt;span class="pull-right"&gt;${items.create_at}&lt;/span&gt;&lt;/li&gt;`</span><br><span class="line"></span><br><span class="line">    })</span><br><span class="line">    lg.innerHTML=html1</span><br></pre></td></tr></tbody></table></figure></li>
-<li>传统标签替换<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> var eleLi="";</span><br><span class="line">   for (var i=0;i&lt;msgs.length;i++){</span><br><span class="line"></span><br><span class="line">       eleLi+="&lt;li class='list-group-item'&gt;"+msgs[i].name+'说：'+msgs[i].content+" &lt;span class='pull-right'&gt;"+msgs[i].create_at+"&lt;/span&gt;&lt;/li&gt;"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   }</span><br><span class="line">lg.innerHTML=eleLi</span><br></pre></td></tr></tbody></table></figure></li>
+<li>传统标签替换<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> var eleLi="";</span><br><span class="line">   for (var i=0;i&lt;msgs.length;i++){</span><br><span class="line"></span><br><span class="line">       eleLi+="&lt;li class='list-group-item'&gt;"+msgs[i].name+'说：'+msgs[i].content+" &lt;span class='pull-right'&gt;"+msgs[i].create_at+"&lt;/span&gt;&lt;/li&gt;"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   }</span><br><span class="line">lg.innerHTML=eleLi</span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ol>
+<h2 id="切换NodeJS版本"><a href="#切换NodeJS版本" class="headerlink" title="切换NodeJS版本"></a>切换NodeJS版本</h2><ul>
+<li><p>说明：通过nvm工具可以实现nodejs任意版本切换</p>
+</li>
+<li><p>下载：<a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">https://github.com/coreybutler/nvm-windows/releases</a> </p>
+</li>
+<li><p>命令</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">nvm version</span><br><span class="line"></span><br><span class="line">nvm install  latest</span><br><span class="line"></span><br><span class="line">nvm install  版本号</span><br><span class="line"></span><br><span class="line">nvm uninstall 版本号</span><br><span class="line"></span><br><span class="line">nvm list</span><br><span class="line"></span><br><span class="line">nvm use	   版本号</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>安装nvm</p>
+</li>
+</ul>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps1.jpg" alt="img"> </p>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps2.jpg" alt="img"> </p>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps3.jpg" alt="img"> </p>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps4.jpg" alt="img"> </p>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps5.jpg" alt="img"> </p>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps6.jpg" alt="img"> </p>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps7.jpg" alt="img"> </p>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps8.jpg" alt="img"> </p>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps9.jpg" alt="img"> </p>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps10.jpg" alt="img"> </p>
+<ul>
+<li>通过nvm查看托管nodejs版本  -&gt; 安装测试版 -&gt; 切换测试版 -&gt; 验证</li>
+</ul>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps11.jpg" alt="img"> </p>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps12.jpg" alt="img"> </p>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps13.jpg" alt="img"> </p>
+<ul>
+<li>切换稳定版 -&gt; 验证</li>
+</ul>
+<p><img src="file:///C:\Users\Hayabusa\AppData\Local\Temp\ksohtml4432\wps14.jpg" alt="img"> </p>
+<p>解决nvm下载慢的问题</p>
+<ol>
+<li><p>命令行输入 where nvm</p>
+</li>
+<li><p>在提示目录下找到settings.txt</p>
+</li>
+<li><p>后面添加淘宝镜像：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node_mirror: https://npm.taobao.org/mirrors/node/</span><br><span class="line">npm_mirror: https://npm.taobao.org/mirrors/npm/</span><br></pre></td></tr></tbody></table></figure></li>
 </ol>
 
                 
@@ -1068,7 +1109,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">17.1k</span>&nbsp;字
+                class="white-color">17.8k</span>&nbsp;字
             
             
             
