@@ -6,7 +6,7 @@
   <link href="https://akirahayabusa.github.io/atom.xml" rel="self"/>
   
   <link href="https://akirahayabusa.github.io/"/>
-  <updated>2021-08-06T12:51:59.862Z</updated>
+  <updated>2021-08-09T15:54:44.849Z</updated>
   <id>https://akirahayabusa.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>鸿蒙(HarmonyOS)应用开发入门</title>
+    <link href="https://akirahayabusa.github.io/2021/08/07/hong-meng-harmonyos-ying-yong-kai-fa-ru-men/"/>
+    <id>https://akirahayabusa.github.io/2021/08/07/hong-meng-harmonyos-ying-yong-kai-fa-ru-men/</id>
+    <published>2021-08-07T12:54:11.000Z</published>
+    <updated>2021-08-09T15:54:44.849Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-鸿蒙系统介绍&quot;&gt;&lt;a href=&quot;#1-鸿蒙系统介绍&quot; class=&quot;headerlink&quot; title=&quot;1.鸿蒙系统介绍&quot;&gt;&lt;/a&gt;1.鸿蒙系统介绍&lt;/h2&gt;&lt;h3 id=&quot;1-1官方定义&quot;&gt;&lt;a href=&quot;#1-1官方定义&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="鸿蒙" scheme="https://akirahayabusa.github.io/tags/%E9%B8%BF%E8%92%99/"/>
+    
+    <category term="HarmonyOS" scheme="https://akirahayabusa.github.io/tags/HarmonyOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>鸿蒙(HarmonyOS)应用开发路线</title>
+    <link href="https://akirahayabusa.github.io/2021/08/07/hong-meng-harmonyos-ying-yong-kai-fa-lu-xian/"/>
+    <id>https://akirahayabusa.github.io/2021/08/07/hong-meng-harmonyos-ying-yong-kai-fa-lu-xian/</id>
+    <published>2021-08-07T12:26:05.000Z</published>
+    <updated>2021-08-07T12:58:12.057Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-鸿蒙应用开发&quot;&gt;&lt;a href=&quot;#1-鸿蒙应用开发&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="鸿蒙" scheme="https://akirahayabusa.github.io/tags/%E9%B8%BF%E8%92%99/"/>
+    
+    <category term="HarmonyOS" scheme="https://akirahayabusa.github.io/tags/HarmonyOS/"/>
+    
+  </entry>
   
   <entry>
     <title>nodejs之Express框架</title>
