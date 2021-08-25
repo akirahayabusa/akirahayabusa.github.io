@@ -470,21 +470,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-17
+                    2021-08-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -506,6 +506,56 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="1-组件"><a href="#1-组件" class="headerlink" title="1.组件"></a>1.组件</h2><p>页面所展示出来的文本框，按钮等展示的元素都是组件。</p>
+<p>注意：组件在未被添加到布局中时，既无法显示也无法交互，因此一个用户界面至少要包含一个布局。</p>
+<p>如：按钮组件、图片组件、文本框组件、文本输入框组件、进度条组件，音量滑块组件，单选框组件。</p>
+<p>分类：显示类组件（图片组件，文本组件，进度条组件等）、交互类组件（按钮组件，输入框组件，多选框组件，单选框组件，滑块组件等）、布局是容器类的组件<br>父类：Component（包括布局）</p>
+<h3 id="1-1显示类组件"><a href="#1-1显示类组件" class="headerlink" title="1.1显示类组件"></a>1.1显示类组件</h3><h4 id="1-1-1文本组件（text）"><a href="#1-1-1文本组件（text）" class="headerlink" title="1.1.1文本组件（text）"></a>1.1.1文本组件（text）</h4><ol>
+<li><p>常见属性说明：</p>
+<p><img src="/medias/article/harmonyos02/image-20210821220040401.png" alt="image-20210821220040401"></p>
+<p><img src="/medias/article/harmonyos02/image-20210821220115424.png" alt="image-20210821220115424"></p>
+</li>
+</ol>
+<p>特别说明属性值说明：</p>
+<ul>
+<li><p>宽高属性</p>
+<ol>
+<li><p>match_content 包裹内容</p>
+</li>
+<li><p>match_parent 填充父元素</p>
+</li>
+<li><p>或者具体数值单位</p>
+<p>3.1 px(像素):固定的</p>
+<p>3.2 vp（虚拟像素）：宽高<br>   vp = (px<em>160)/PPI:<br>   PPI:屏幕像素点密度（Pixels Per Inch）:对角线像素点个数/屏幕尺寸：每英寸有多少个像素点.<br>   例：假如要在布局上设置width为100px的组件，则vp=(100px</em>160)/PPI</p>
+<p>3.3 fp   (像素)：文字大小</p>
+</li>
+</ol>
+</li>
+</ul>
+<p><img src="/medias/article/harmonyos02/image-20210823134537061.png" alt="image-20210823134537061"></p>
+<ul>
+<li>颜色属性：</li>
+</ul>
+<ol>
+<li>三元色：[透明度]红绿蓝</li>
+<li>范围：0~255</li>
+<li>表示方法：十六进制（#00917643）注：两两一样时可以省略为一个</li>
+</ol>
+<ul>
+<li>位置属性</li>
+</ul>
+<ol>
+<li>边距<br> 1.1 外边距(margin、top_margin、bottom_margin、left_margin、right_margin)<br> 组件边框外侧距离其他组件的距离。<br> 如果组件外侧没有其他组件，则是到父布局的距离。<br> 1.2. 内边距(padding、top_padding、botton_padding、left_padding、right_padding)<br> 组件边框的内侧和文本之间的间距。<br> 一般设置上左就行了。</li>
+</ol>
+<ul>
+<li>展示大段文字</li>
+</ul>
+<ol>
+<li>文字过长自动换行<br>ohos:multiple_lines=”true”(自动换行)<br>ohos:max_text_lines=”1”  (文本最大行数)</li>
+<li>文字过长省略开头<br>ohos:truncation_mode=”ellipsis_at_start”</li>
+<li>文字过长省略结尾<br>ohos:truncation_mode=”ellipsis_at_end”</li>
+<li>文字过长省略中间<br>ohos:truncation_mode=”ellipsis_at_middle”</li>
+<li>跑马灯效果<br>ohos:truncation_mode=”auto_scrolling”(文本允许自动滚动)<br>ohos:auto_scrolling_count=”unlimited”（滚动次数）<br>ohos:auto_scrolling_duration=”2000”（滚动速度）<br>text.startAutoScrolling();（开启跑马灯效果）<h4 id="1-1-2图片组件（Image）"><a href="#1-1-2图片组件（Image）" class="headerlink" title="1.1.2图片组件（Image）"></a>1.1.2图片组件（Image）</h4>属性介绍：<br>background_element(背景图片)<br>image_src(展示图片|前景图片)<br>clip_alignment(裁剪方式)<br>scale_mode(缩放模式)</li>
+</ol>
 <h2 id="2-布局"><a href="#2-布局" class="headerlink" title="2.布局"></a>2.布局</h2><p>多个组件摆放的方式就是布局，组件必须添加到布局中才能够显示出来。</p>
 <h2 id="3-事件"><a href="#3-事件" class="headerlink" title="3.事件"></a>3.事件</h2><p>就是可以被组件识别的操作。<br>常见的事件：单机、双击、长按、滑动</p>
 <h3 id="3-1单击事件"><a href="#3-1单击事件" class="headerlink" title="3.1单击事件"></a>3.1单击事件</h3><p>单击事件又叫做点击事件。是开发中使用最多的一种事件没有之一。<br>实现步骤：</p>
@@ -775,17 +825,16 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08/13/02-hong-meng-harmonyos-ying-yong-kai-fa-ru-men/">
+                <a href="/2021/08/25/01-chu-shi-rong-qi-hua-ji-zhu-docker/">
                     <div class="card-image">
                         
-                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="02鸿蒙-HarmonyOS-应用开发入门">
+                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="01初始容器化技术docker">
                         
-                        <span class="card-title">02鸿蒙-HarmonyOS-应用开发入门</span>
+                        <span class="card-title">01初始容器化技术docker</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -795,9 +844,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -810,16 +859,15 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%B8%BF%E8%92%99/">
-                        <span class="chip bg-color">鸿蒙</span>
+                    <a href="/tags/%E5%AE%B9%E5%99%A8/">
+                        <span class="chip bg-color">容器</span>
                     </a>
                     
-                    <a href="/tags/HarmonyOS/">
-                        <span class="chip bg-color">HarmonyOS</span>
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
                 </div>
@@ -1068,7 +1116,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">24.5k</span>&nbsp;字
+                class="white-color">26.5k</span>&nbsp;字
             
             
             
