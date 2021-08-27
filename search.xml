@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>03分布式之dubbo高级特性</title>
+      <link href="/2021/08/27/03-fen-bu-shi-zhi-dubbo-gao-ji-te-xing/"/>
+      <url>/2021/08/27/03-fen-bu-shi-zhi-dubbo-gao-ji-te-xing/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>02分布式之dubbo概述</title>
       <link href="/2021/08/26/02-fen-bu-shi-zhi-dubbo-gai-shu/"/>
       <url>/2021/08/26/02-fen-bu-shi-zhi-dubbo-gai-shu/</url>
@@ -420,7 +433,7 @@
       <link href="/2021/07/27/yu-yin-zhuan-wen-zi-fu-wu-tui-jian-yu-jian-dan-shi-yong/"/>
       <url>/2021/07/27/yu-yin-zhuan-wen-zi-fu-wu-tui-jian-yu-jian-dan-shi-yong/</url>
       
-        <content type="html"><![CDATA[<h2 id="1-服务"><a href="#1-服务" class="headerlink" title="1.服务"></a>1.服务</h2><h3 id="1-阿里云"><a href="#1-阿里云" class="headerlink" title="1.阿里云"></a>1.阿里云</h3><p>进入阿里云&gt;搜索产品（智能语音交互）&gt;选择个性化人声定制&gt;定制声音即可。<br>链接:<a href="https://nls-portal.console.aliyun.com/overview">个性化人声定制</a></p><h3 id="2-微软Azure"><a href="#2-微软Azure" class="headerlink" title="2.微软Azure"></a>2.微软Azure</h3><p>进入微软&gt;点击产品&gt;点击认知服务&gt;语音&gt;文本转语音。<br>链接：<a href="https://azure.microsoft.com/zh-cn/services/cognitive-services/text-to-speech/?cdn=disable#overview">个性化人声定制</a></p><h2 id="2-好用的工具"><a href="#2-好用的工具" class="headerlink" title="2.好用的工具"></a>2.好用的工具</h2><h3 id="1-AI配音专家"><a href="#1-AI配音专家" class="headerlink" title="1.AI配音专家"></a>1.AI配音专家</h3><p>链接：<a href="https://azure.microsoft.com/zh-cn/services/cognitive-services/text-to-speech/?cdn=disable#overview">AI配音专家</a><br>建议版本=v1.1.0<br>AccessKey ID=’LTAI5tCjZCecgfxbYTrktNpt’<br>AccessKey Secret=’eDX04dZrQ0XLCBIyVPpX4yDa1L17Na’<br>appkey = ‘9mPeplUpc60EzB3r’;</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="1-服务"><a href="#1-服务" class="headerlink" title="1.服务"></a>1.服务</h2><h3 id="1-阿里云"><a href="#1-阿里云" class="headerlink" title="1.阿里云"></a>1.阿里云</h3><p>进入阿里云&gt;搜索产品（智能语音交互）&gt;选择个性化人声定制&gt;定制声音即可。<br>链接:<a href="https://nls-portal.console.aliyun.com/overview">个性化人声定制</a></p><h3 id="2-微软Azure"><a href="#2-微软Azure" class="headerlink" title="2.微软Azure"></a>2.微软Azure</h3><p>进入微软&gt;点击产品&gt;点击认知服务&gt;语音&gt;文本转语音。<br>链接：<a href="https://azure.microsoft.com/zh-cn/services/cognitive-services/text-to-speech/?cdn=disable#overview">个性化人声定制</a></p><h2 id="2-好用的工具"><a href="#2-好用的工具" class="headerlink" title="2.好用的工具"></a>2.好用的工具</h2><h3 id="1-AI配音专家"><a href="#1-AI配音专家" class="headerlink" title="1.AI配音专家"></a>1.AI配音专家</h3><p>链接：<a href="https://azure.microsoft.com/zh-cn/services/cognitive-services/text-to-speech/?cdn=disable#overview">AI配音专家</a><br>建议版本=v1.1.0</p>]]></content>
       
       
       <categories>
