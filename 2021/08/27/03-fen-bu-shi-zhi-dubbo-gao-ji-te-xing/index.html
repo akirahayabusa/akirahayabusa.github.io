@@ -470,21 +470,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-27
+                    2021-08-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    223
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -519,6 +519,53 @@
 <li>打包成功后进入distribution的target文件夹下找到打包好的jar包执行。（java -jar）</li>
 <li>进入ui使用npm run dev执行</li>
 <li>访问</li>
+</ol>
+<h2 id="2-常用高级配置"><a href="#2-常用高级配置" class="headerlink" title="2.常用高级配置"></a>2.常用高级配置</h2><h3 id="2-1序列化"><a href="#2-1序列化" class="headerlink" title="2.1序列化"></a>2.1序列化</h3><p>两个机器传输数据，传输java对象时必须对该类实现Serializable，从而使对象通过管道进行流传输。</p>
+<h3 id="2-2地址缓存"><a href="#2-2地址缓存" class="headerlink" title="2.2地址缓存"></a>2.2地址缓存</h3><p>dubbo服务消费者在第一次调用时，会将服务提供方地址缓存到本地，以后再调用不会访问注册中心。</p>
+<h3 id="2-3超时与重试"><a href="#2-3超时与重试" class="headerlink" title="2.3超时与重试"></a>2.3超时与重试</h3><ul>
+<li>服务消费者在调用服务提供者的时候发生了阻塞、等待的情形，这个时候，服务消费者会一直等待下去。</li>
+<li>在某个峰值时刻，大量的请求都在同时请求服务消费者，会造成线程的大量堆积，势必会造成雪崩。</li>
+<li>dubbo利用超时机制来解决这个问题，设置一个超时时间，在这个时间段内，无法完成服务访问，则自动断开连接。</li>
+</ul>
+<p>timeout:超时时间单位毫秒</p>
+<p>retries:重启次数</p>
+<p><img src="/medias/article/dubbo03/image-20210828190253623.png" alt="image-20210828190253623"></p>
+<p><img src="/medias/article/dubbo03/image-20210828204126133.png" alt="image-20210828204126133"></p>
+<p>如果Reference和Service都配置都生效。</p>
+<p>建议配置在Service上面</p>
+<ul>
+<li>如果仅仅有超时还不行，如果出现网络抖动这一次请求就会失败。所以需要通过retries属性来设置重发次数（默认两次）</li>
+</ul>
+<h3 id="2-4-多版本"><a href="#2-4-多版本" class="headerlink" title="2.4 多版本"></a>2.4 多版本</h3><p>利用version属性<br>reference（version=”1.0”）<br>Service(version=”1.0”)<br>从而调用同一个服务的不同版本。</p>
+<h3 id="2-5负载均衡"><a href="#2-5负载均衡" class="headerlink" title="2.5负载均衡"></a>2.5负载均衡</h3><h4 id="2-5-1负载均衡的策略：（4种）"><a href="#2-5-1负载均衡的策略：（4种）" class="headerlink" title="2.5.1负载均衡的策略：（4种）"></a>2.5.1负载均衡的策略：（4种）</h4><p><img src="/medias/article/dubbo03/image-20210828212905350.png" alt="image-20210828212905350"></p>
+<ul>
+<li>Random: 按权重随机，默认值。按权重设置随机概率。<br>通过给同一个服务的权重设置不同的值：<br>Service(weight=100)<br>控制器当中注入服务的注解Reference中添加属性loadbalance，属性值有：</li>
+</ul>
+<ol>
+<li>ConsistentHashLoadBalance:consistentcash：一致性的Hash,相同参数值的请求总是发给统一提供者</li>
+<li>LeastActiveLoadBalance:leastactive：按最少活跃调用数，相同活跃数的随机。</li>
+<li>RandomLoadBalance:random：按权重随机</li>
+<li>RoundRobinLoadBalance:roundrobin：按权重轮询<h3 id="2-6集群容错"><a href="#2-6集群容错" class="headerlink" title="2.6集群容错"></a>2.6集群容错</h3>防止某个服务宕机会按照策略方式访问别的方式访问别的服务<br>控制器当中注入服务的注解Reference中添加属性cluster</li>
+</ol>
+<ul>
+<li><p>Failover Cluster(默认):<br>失败自动切换，当出现失败，重试其它服务器 [1]。通常用于读操作，但重试会带来更长延迟。可通过 retries=”2” 来设置重试次数(不含第一次)。</p>
+</li>
+<li><p>Failfast Cluster:<br>快速失败，只发起一次调用，失败立即报错。通常用于非幂等性的写操作，比如新增记录。哪一条失败，立刻停。</p>
+</li>
+<li><p>Failsafe Cluster:<br>失败安全，出现异常时，直接忽略。通常用于写入审计日志等操作。（不重要的操作）</p>
+</li>
+<li><p>Failback Cluster：<br>失败自动恢复，后台记录失败请求，定时重发。通常用于消息通知操作。（强制调用关系）</p>
+</li>
+<li><p>Forking Cluster：<br>并行调用多个服务器，只要一个成功即返回。通常用于实时性要求较高的读操作，但需要浪费更多服务资源。可通过 forks=”2” 来设置最大并行数。（广撒网）</p>
+</li>
+<li><p>Broadcast Cluster：<br>广播调用所有提供者，逐个调用，任意一台报错则报错 [2]。通常用于通知所有提供者更新缓存或日志等本地资源信息。（逐个调用）</p>
+</li>
+</ul>
+<p>注：我理解的集群容错应当是在负载均衡基础上的，负载均衡首先选择了某个服务不得行，之后集群容错发挥作用。</p>
+<h3 id="2-7服务降级"><a href="#2-7服务降级" class="headerlink" title="2.7服务降级"></a>2.7服务降级</h3><p>服务降级方式：<br>在资源紧缺的场景中，如果某些服务不常用，我们可以对其降级。<br>在Reference注解中添加mock属性，其值可选：</p>
+<ol>
+<li>force:return null 不再远程调用该服务直接返回null值。用来屏蔽不重要服务不可用时对调用方的影响。</li>
+<li>fail:return null  失败后返回null不会报错。用来容忍不重要服务不稳定时对调用方的影响。</li>
 </ol>
 
                 
@@ -1056,7 +1103,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.5k</span>&nbsp;字
+                class="white-color">32.5k</span>&nbsp;字
             
             
             
