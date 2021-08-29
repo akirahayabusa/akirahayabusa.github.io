@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="maven以及npm依赖查找, 哈雅布撒的博客">
+    <meta name="keywords" content="01消息队列, 哈雅布撒的博客">
     <meta name="description" content="Hello,here is HYBS&#39;s blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>maven以及npm依赖查找 | 哈雅布撒的博客</title>
+    <title>01消息队列 | 哈雅布撒的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -318,7 +318,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">maven以及npm依赖查找</h1>
+                    <h1 class="description center-align post-title">01消息队列</h1>
                 </div>
             </div>
         </div>
@@ -434,8 +434,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/">
-                                <span class="chip bg-color">技术工具</span>
+                            <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                <span class="chip bg-color">微信小程序</span>
                             </a>
                         
                     </div>
@@ -459,28 +459,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-03
+                    2021-08-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-03
+                    2021-08-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -501,10 +501,40 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ol>
-<li>maven仓库：<br><a target="_blank" rel="noopener" href="https://mvnrepository.com/">mvnrepository</a></li>
-<li>npm仓库：<br><a target="_blank" rel="noopener" href="https://www.npmjs.com/">npmjs</a></li>
+                <h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h2><p>作用：发消息。<br>常用技术：activeMq、rabbitMq、Kafka</p>
+<p>主要功能：</p>
+<ol>
+<li><p>解耦<br> 应用场景：例如分布式项目中，卖家中心发布了一个商品，需要将该商品同步到solr索引库当中，然而，导入索引库的功能在门户模块，如何通知门户进行导入索引库操作，就用到了消息队列。</p>
+<p><img src="/medias/article/activeMq01/image-20210829155604702.png" alt="image-20210829155604702"></p>
+</li>
+<li><p>削峰<br> 应用场景：淘宝秒杀活动中，如果秒杀接口被多个请求同时访问会导致卡死宕机，这时就需要在秒杀接口之前加上一个消息队列，设置好请求数之后，存入队列出队方式调用秒杀接口，超过预设的请求数后，丢弃其余秒杀请求。</p>
+</li>
 </ol>
+<p><img src="/medias/article/activeMq01/image-20210829155618738.png" alt="image-20210829155618738"></p>
+<h2 id="2-常用技术"><a href="#2-常用技术" class="headerlink" title="2.常用技术"></a>2.常用技术</h2><h3 id="2-1activeMq"><a href="#2-1activeMq" class="headerlink" title="2.1activeMq"></a>2.1activeMq</h3><p>相关概念：<br>生产者：发送消息的一方<br>消费者：接收消息的一方<br>消息形式：</p>
+<ol>
+<li>点对点 queue：一个生产者对应一个消费者，消息队列会暂存消息，消费者接收到消息后，消息从队列中删除。</li>
+<li>发布/订阅 topic：一个生产者对应多个消费者，消息队列不会暂存消息，如果当时消费者不处于接收信息的状态，消息无法接受。</li>
+</ol>
+<p>消息的正文格式<br>StreamMessage 数据流<br>MapMessage 一组键值对<br>TextMessage 字符串<br>ObJectMessage 一个序列化的java对象<br>BytesMessage 字节的数据流</p>
+<h3 id="2-2docker安装activeMq"><a href="#2-2docker安装activeMq" class="headerlink" title="2.2docker安装activeMq"></a>2.2docker安装activeMq</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35981283/article/details/69666706">https://blog.csdn.net/qq_35981283/article/details/69666706</a></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.拉取activemq镜像</span><br><span class="line">docker pull docker.io/webcenter/activemq</span><br><span class="line">2.运行容器</span><br><span class="line">docker run -d --name activemq -p 61616:61616 -p 8161:8161 docker.io/webcenter/activemq</span><br><span class="line">3.查看容器是否运行正常</span><br><span class="line">docker ps</span><br></pre></td></tr></tbody></table></figure>
+<p>61616：接收请求端口<br>8161：activemq客户端端口<br>客户端默认账号密码：admin admin</p>
+<h3 id="2-3-测试代码"><a href="#2-3-测试代码" class="headerlink" title="2.3 测试代码"></a>2.3 测试代码</h3><h4 id="2-3-1-点对点"><a href="#2-3-1-点对点" class="headerlink" title="2.3.1 点对点"></a>2.3.1 点对点</h4><p>直到消费者消费了提供者发布的消息，消息才消失。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">    @Test</span><br><span class="line">    public void producer(){</span><br><span class="line">//        jms支持消息</span><br><span class="line">        ConnectionFactory connectionFactory=new ActiveMQConnectionFactory("tcp://192.168.66.66:61616");</span><br><span class="line">        try {</span><br><span class="line">            Connection connection;</span><br><span class="line">            connection = connectionFactory.createConnection();</span><br><span class="line">            connection.start();</span><br><span class="line">//            是否开启事务：true，否，则第二个参数没有意义;false时第二个参数有意义 消息的应答模式：自动应答、手动应答</span><br><span class="line">            Session session;//自动应答</span><br><span class="line">            session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line">//            创建队列 点对点</span><br><span class="line">            Queue queue=session.createQueue("test_queue");</span><br><span class="line">            //创建消息生产者</span><br><span class="line">            MessageProducer producer = session.createProducer(queue);</span><br><span class="line">            //创建消息</span><br><span class="line">            TextMessage message=session.createTextMessage("你好这是第一个消息队列");</span><br><span class="line">//            发送消息</span><br><span class="line">            producer.send(message);</span><br><span class="line">            producer.close();</span><br><span class="line">            session.close();</span><br><span class="line">            connection.close();</span><br><span class="line">//</span><br><span class="line">        } catch (JMSException e) {</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    @Test</span><br><span class="line">    public void consumer ()throws Exception{</span><br><span class="line">//        jms支持消息</span><br><span class="line">        ConnectionFactory connectionFactory=new ActiveMQConnectionFactory("tcp://192.168.66.66:61616");</span><br><span class="line">            Connection connection;</span><br><span class="line">            connection = connectionFactory.createConnection();</span><br><span class="line">            connection.start();</span><br><span class="line">//            是否开启事务：true，否，则第二个参数没有意义;false时第二个参数有意义 消息的应答模式：自动应答、手动应答</span><br><span class="line">            Session session;//自动应答</span><br><span class="line">            session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line">//            创建队列 点对点</span><br><span class="line">            Queue queue=session.createQueue("test_queue");</span><br><span class="line">            //创建消息生产者</span><br><span class="line">            MessageConsumer consumer = session.createConsumer(queue);</span><br><span class="line"></span><br><span class="line">            //消息监听器</span><br><span class="line">            consumer.setMessageListener(new MessageListener() {</span><br><span class="line">                @Override</span><br><span class="line">                public void onMessage(Message message) {</span><br><span class="line">                    TextMessage textMessage= (TextMessage) message;</span><br><span class="line">                    String text= null;</span><br><span class="line">                    try {</span><br><span class="line">//                        打印消息</span><br><span class="line">                        text = textMessage.getText();</span><br><span class="line">                        System.out.println(text);</span><br><span class="line">                    } catch (JMSException e) {</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    }</span><br><span class="line"></span><br><span class="line">                }</span><br><span class="line">            });</span><br><span class="line">            System.in.read();   //相当于把这个方法抱在了while(true)里面</span><br><span class="line">        consumer.close();</span><br><span class="line">        session.close();</span><br><span class="line">        connection.close();</span><br><span class="line"></span><br><span class="line">//</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="2-3-2-发布订阅"><a href="#2-3-2-发布订阅" class="headerlink" title="2.3.2 发布订阅"></a>2.3.2 发布订阅</h4><p>直到消费者如果没有在生产者发布消息时及时消费那么消费者将消费不到信息。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">    @Test</span><br><span class="line">    public void producer ()throws Exception{</span><br><span class="line">//        收发消息的端口号61616</span><br><span class="line">        ConnectionFactory connectionFactory=new ActiveMQConnectionFactory("tcp://192.168.66.66:61616");</span><br><span class="line">        Connection connection=connectionFactory.createConnection();</span><br><span class="line">        connection.start();</span><br><span class="line">//        是否开启事务</span><br><span class="line">//        true代标开启事务第二个参数就忽略了</span><br><span class="line">//        false 第二参数才有意义            消息的应答模式 ：自动应答或手动应答</span><br><span class="line">        Session session=connection.createSession(false, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line">//        创建队列</span><br><span class="line">//        点对点</span><br><span class="line">//        Queue queue=session.createQueue("test_queue");</span><br><span class="line">//        发布订阅</span><br><span class="line">        Topic topic=session.createTopic("test_topic");</span><br><span class="line">//        创建一个生产者</span><br><span class="line">        MessageProducer messageProducer=session.createProducer(topic);</span><br><span class="line">        TextMessage message=session.createTextMessage("hello i am hayabusa");</span><br><span class="line">        messageProducer.send(message);</span><br><span class="line">        messageProducer.close();</span><br><span class="line">        session.close();</span><br><span class="line">        connection.close();</span><br><span class="line">}</span><br><span class="line">@Test</span><br><span class="line">//创建消费者</span><br><span class="line">    public void consumer()throws Exception{</span><br><span class="line">    //        收发消息的端口号61616</span><br><span class="line">    ConnectionFactory connectionFactory=new ActiveMQConnectionFactory("tcp://192.168.66.66:61616");</span><br><span class="line">    Connection connection=connectionFactory.createConnection();</span><br><span class="line">    connection.start();</span><br><span class="line">//        是否开启事务</span><br><span class="line">//        true代标开启事务第二个参数就忽略了</span><br><span class="line">//        false 第二参数才有意义            消息的应答模式 ：自动应答或手动应答</span><br><span class="line">    Session session=connection.createSession(false, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line"></span><br><span class="line">    //        创建队列</span><br><span class="line">//    点对点</span><br><span class="line">//    Queue queue=session.createQueue("test_queue");</span><br><span class="line">//发布订阅</span><br><span class="line">    Topic topic=session.createTopic("test_topic");</span><br><span class="line">    MessageConsumer messageConsumer=session.createConsumer(topic);</span><br><span class="line">    messageConsumer.setMessageListener(new MessageListener() {</span><br><span class="line">        @Override</span><br><span class="line">        public void onMessage(Message message) {</span><br><span class="line">            TextMessage textMessage= (TextMessage) message;</span><br><span class="line">            try {</span><br><span class="line">                String text=textMessage.getText();</span><br><span class="line">                System.out.println(text);</span><br><span class="line">            } catch (JMSException e) {</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    });</span><br><span class="line">    System.in.read();</span><br><span class="line">    messageConsumer.close();</span><br><span class="line">    session.close();</span><br><span class="line">    connection.close();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-4-整合到springboot"><a href="#2-4-整合到springboot" class="headerlink" title="2.4 整合到springboot"></a>2.4 整合到springboot</h3><h4 id="2-4-1生产者消费者项目的application-properties分别写上"><a href="#2-4-1生产者消费者项目的application-properties分别写上" class="headerlink" title="2.4.1生产者消费者项目的application.properties分别写上"></a>2.4.1生产者消费者项目的application.properties分别写上</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#收发信息的地址</span><br><span class="line">server.port=8081</span><br><span class="line">spring.activemq.broker-url=tcp://192.168.66.66:61616</span><br><span class="line"></span><br><span class="line">spring.activemq.user=admin</span><br><span class="line">spring.activemq.password=admin</span><br><span class="line"></span><br><span class="line">#默认使用点对点  ，如果想使用发布订阅改为true</span><br><span class="line">spring.jms.pub-sub-domain=false</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="2-4-2-启动类分别加上"><a href="#2-4-2-启动类分别加上" class="headerlink" title="2.4.2 启动类分别加上"></a>2.4.2 启动类分别加上</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@EnableJms</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="2-4-3-生产者示例"><a href="#2-4-3-生产者示例" class="headerlink" title="2.4.3 生产者示例"></a>2.4.3 生产者示例</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class ProducerController {</span><br><span class="line">//    注入消息模板</span><br><span class="line">    @Autowired</span><br><span class="line">    private JmsMessagingTemplate jmsMessagingTemplate;</span><br><span class="line">    @RequestMapping("sendMsg")</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public String sendMsg()throws  Exception{</span><br><span class="line">        Queue queue=new ActiveMQQueue("test-queue"); //队列名称</span><br><span class="line">        Topic topic=new ActiveMQTopic("test-topic"); //队列名称</span><br><span class="line">        jmsMessagingTemplate.convertAndSend(queue,"test-message");</span><br><span class="line">        jmsMessagingTemplate.convertAndSend(topic,"test-message");</span><br><span class="line">        return "success";</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="2-4-4-消费者示例"><a href="#2-4-4-消费者示例" class="headerlink" title="2.4.4 消费者示例"></a>2.4.4 消费者示例</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class Consumer {</span><br><span class="line">    @JmsListener(destination = "test-queue")</span><br><span class="line">    public void getMessage(String text){</span><br><span class="line">        //对象匹配进行绑定</span><br><span class="line">        System.out.println("接收到的test_queue的消息"+text);</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    @JmsListener(destination = "test-topic")</span><br><span class="line">    public void getMessage2(String text){</span><br><span class="line">        //对象匹配进行绑定</span><br><span class="line">        System.out.println("接收到的test_topic的消息"+text);</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    @JmsListener(destination = "test-topic")</span><br><span class="line">    public void getMessage3(String text){</span><br><span class="line">        //对象匹配进行绑定</span><br><span class="line">        System.out.println("接收到的test_topic的消息"+text);</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
 
                 
             </div>
@@ -531,7 +561,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/03/maven-yi-ji-npm-yi-lai-cha-zhao/">https://akirahayabusa.gitee.io/akirahayabusa/2021/08/03/maven-yi-ji-npm-yi-lai-cha-zhao/</a>
+                    <a href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/29/01-xiao-xi-dui-lie/">https://akirahayabusa.gitee.io/akirahayabusa/2021/08/29/01-xiao-xi-dui-lie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -569,8 +599,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/">
-                                    <span class="chip bg-color">技术工具</span>
+                                <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                    <span class="chip bg-color">微信小程序</span>
                                 </a>
                             
                         </div>
@@ -740,16 +770,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/03/nodejs-zhi-chang-yong-di-san-fang-mo-kuai/">
+                <a href="/2021/08/29/01-xiao-xi-dui-lie/">
                     <div class="card-image">
                         
-                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="nodejs之常用第三方模块">
+                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="01消息队列">
                         
-                        <span class="card-title">nodejs之常用第三方模块</span>
+                        <span class="card-title">01消息队列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -759,9 +790,58 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-03
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">微信小程序</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/08/27/03-fen-bu-shi-zhi-dubbo-gao-ji-te-xing/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="03分布式之dubbo高级特性">
+                        
+                        <span class="card-title">03分布式之dubbo高级特性</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -777,68 +857,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/nodejs/">
-                        <span class="chip bg-color">nodejs</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/08/03/zookeeper-an-zhuang/">
-                    <div class="card-image">
-                        
-                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="nodejs之npm">
-                        
-                        <span class="card-title">nodejs之npm</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-03
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/" class="post-category">
-                                    工具安装
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
                     <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
                         <span class="chip bg-color">分布式</span>
                     </a>
                     
-                    <a href="/tags/zookeeper/">
-                        <span class="chip bg-color">zookeeper</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%9B%86%E7%BE%A4/">
-                        <span class="chip bg-color">集群</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
-                        <span class="chip bg-color">微服务</span>
+                    <a href="/tags/dubbo/">
+                        <span class="chip bg-color">dubbo</span>
                     </a>
                     
                 </div>
