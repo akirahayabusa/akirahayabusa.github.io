@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>01JWT原理+token分析</title>
+      <link href="/2021/08/29/01jwt-yuan-li-token-fen-xi/"/>
+      <url>/2021/08/29/01jwt-yuan-li-token-fen-xi/</url>
+      
+        <content type="html"><![CDATA[<p>JWT json web token</p><h2 id="1-身份验证的两种方式"><a href="#1-身份验证的两种方式" class="headerlink" title="1.身份验证的两种方式"></a>1.身份验证的两种方式</h2><h3 id="1-1、cookie-session"><a href="#1-1、cookie-session" class="headerlink" title="1.1、cookie+session"></a>1.1、cookie+session</h3><p>原理过程：服务端产生session后，将sessionid通过cookie发送到客户端，客户端携带sessionid便能顺利找到session。<br>存在问题：集群环境下，如果访问没有session生成的机器，将会造成用户状态丢失；单点登录（一个系统如果有多个子系统，在其中一个子系统中登录，其他受信任的子系统无需再次登录，例如百度文库登陆后，百度知道不必再次登录）<br>解决方案：<br>session共享办法，集群搭建时可以配置，缺点：同步速度慢，消费性能。<br>session持久化，缺点：工程量较大，持久层挂掉依旧会造成用户状态丢失。<br>负载均衡 ip_hash：根据ip分配服务器，不会再访问别的服务器。</p><h3 id="1-2、jwt验证机制"><a href="#1-2、jwt验证机制" class="headerlink" title="1.2、jwt验证机制"></a>1.2、jwt验证机制</h3><h3 id="1-2-1工作原理："><a href="#1-2-1工作原理：" class="headerlink" title="1.2.1工作原理："></a>1.2.1工作原理：</h3><p><img src="C:\Users\Hayabusa\AppData\Roaming\Typora\typora-user-images\image-20210829235809720.png" alt="image-20210829235809720"></p><p>JWT 的原理是，服务器认证以后，生成一个 JSON 对象，发回给用户，就像下面这样。</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  "姓名": "张三",</span><br><span class="line">  "角色": "管理员",</span><br><span class="line">  "到期时间": "2018年7月1日0点0分"</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>以后，用户与服务端通信的时候，都要发回这个 JSON 对象。服务器完全只靠这个对象认定用户身份。为了防止用户篡改数据，服务器在生成这个对象的时候，会加上签名。</p><p>服务器就不保存任何 session 数据了，也就是说，服务器变成无状态了，从而比较容易实现扩展。</p><h3 id="1-2-2-JWT-的数据结构"><a href="#1-2-2-JWT-的数据结构" class="headerlink" title="1.2.2.JWT 的数据结构"></a>1.2.2.JWT 的数据结构</h3><p>实际的 JWT 大概就像下面这样。</p><p><img src="C:\Users\Hayabusa\AppData\Roaming\Typora\typora-user-images\image-20210830000604883.png" alt="image-20210830000604883"></p><p>它是一个很长的字符串，中间用点（<code>.</code>）分隔成三个部分。注意，JWT 内部是没有换行的，这里只是为了便于展示，将它写成了几行。</p><p>JWT 的三个部分依次如下。</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Header（头部）</span><br><span class="line">Payload（负载）</span><br><span class="line">Signature（签名）</span><br></pre></td></tr></tbody></table></figure><p>写成一行，就是下面的样子。</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Header.Payload.Signature</span><br></pre></td></tr></tbody></table></figure><h4 id="1-2-2-1-Header"><a href="#1-2-2-1-Header" class="headerlink" title="1.2.2.1.Header"></a>1.2.2.1.Header</h4><p>Header 部分是一个 JSON 对象，描述 JWT 的元数据（描述数据的数据），通常是下面的样子</p><figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  <span class="attr">"alg"</span>: <span class="string">"HS256"</span>,</span><br><span class="line">  <span class="attr">"typ"</span>: <span class="string">"JWT"</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>上面代码中，<code>alg</code>属性表示签名的算法（algorithm），默认是 HMAC SHA256（写成 HS256）；<code>typ</code>属性表示这个令牌（token）的类型（type），JWT 令牌统一写为<code>JWT</code>。</p><p>最后，将上面的 JSON 对象使用 Base64URL 算法（详见后文）转成字符串。</p><h4 id="1-2-2-2-Payload"><a href="#1-2-2-2-Payload" class="headerlink" title="1.2.2.2.Payload"></a>1.2.2.2.Payload</h4><p>Payload 部分也是一个 JSON 对象，用来存放实际需要传递的数据。JWT 规定了7个官方字段，供选用。</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">iss (issuer)：签发人</span><br><span class="line">exp (expiration time)：过期时间</span><br><span class="line">sub (subject)：主题</span><br><span class="line">aud (audience)：受众</span><br><span class="line">nbf (Not Before)：生效时间</span><br><span class="line">iat (Issued At)：签发时间</span><br><span class="line">jti (JWT ID)：编号</span><br></pre></td></tr></tbody></table></figure><p>除了官方字段，你还可以在这个部分定义私有字段，下面就是一个例子。</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  "sub": "1234567890",</span><br><span class="line">  "name": "John Doe",</span><br><span class="line">  "admin": true</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>注意，JWT 默认是不加密的，任何人都可以读到，所以不要把秘密信息放在这个部分。</p><p>这个 JSON 对象也要使用 Base64URL 算法转成字符串。</p><h4 id="1-2-2-3-Signature"><a href="#1-2-2-3-Signature" class="headerlink" title="1.2.2.3.Signature"></a>1.2.2.3.Signature</h4><p>Signature 部分是对前两部分的签名，防止数据篡改。</p><p>首先，需要指定一个密钥（secret）。这个密钥只有服务器才知道，不能泄露给用户。然后，使用 Header 里面指定的签名算法（默认是 HMAC SHA256），按照下面的公式产生签名。</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HMACSHA256(</span><br><span class="line">  base64UrlEncode(header) + "." +</span><br><span class="line">  base64UrlEncode(payload),</span><br><span class="line">  secret)</span><br></pre></td></tr></tbody></table></figure><p>算出签名以后，把 Header、Payload、Signature 三个部分拼成一个字符串，每个部分之间用”点”（<code>.</code>）分隔，就可以返回给用户。</p><h4 id="1-2-2-4-Base64URL"><a href="#1-2-2-4-Base64URL" class="headerlink" title="1.2.2.4.Base64URL"></a>1.2.2.4.Base64URL</h4><p>前面提到，Header 和 Payload 串型化的算法是 Base64URL。这个算法跟 Base64 算法基本类似，但有一些小的不同。</p><p>JWT 作为一个令牌（token），有些场合可能会放到 URL（比如 api.example.com/?token=xxx）。Base64 有三个字符<code>+</code>、<code>/</code>和<code>=</code>，在 URL 里面有特殊含义，所以要被替换掉：<code>=</code>被省略、<code>+</code>替换成<code>-</code>，<code>/</code>替换成<code>_</code> 。这就是 Base64URL 算法。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JWT </tag>
+            
+            <tag> token </tag>
+            
+            <tag> java </tag>
+            
+            <tag> 状态保存 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>01消息队列</title>
       <link href="/2021/08/29/01-xiao-xi-dui-lie/"/>
       <url>/2021/08/29/01-xiao-xi-dui-lie/</url>
