@@ -6,7 +6,7 @@
   <link href="https://akirahayabusa.github.io/atom.xml" rel="self"/>
   
   <link href="https://akirahayabusa.github.io/"/>
-  <updated>2021-08-31T07:59:04.800Z</updated>
+  <updated>2021-08-31T08:26:19.847Z</updated>
   <id>https://akirahayabusa.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git常见问题集</title>
+    <link href="https://akirahayabusa.github.io/2021/08/31/git-chang-jian-wen-ti-ji/"/>
+    <id>https://akirahayabusa.github.io/2021/08/31/git-chang-jian-wen-ti-ji/</id>
+    <published>2021-08-31T08:19:30.000Z</published>
+    <updated>2021-08-31T08:26:19.847Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-Git报错：OpenSSL-SSL-read-Connection-was-reset-errno-10054&quot;&gt;&lt;a href=&quot;#1-Git报错：OpenSSL-SSL-read-Connection-was-reset-errno-10054&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="开发常见问题" scheme="https://akirahayabusa.github.io/categories/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="git" scheme="https://akirahayabusa.github.io/tags/git/"/>
+    
+    <category term="常见错误" scheme="https://akirahayabusa.github.io/tags/%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>01JWT原理+token分析</title>
@@ -512,31 +539,6 @@
     <published>2021-07-30T01:31:02.000Z</published>
     <updated>2021-08-19T13:48:56.062Z</updated>
     
-    
-    
-    
-    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="设计模式" scheme="https://akirahayabusa.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>02php基础之网站基本概念</title>
-    <link href="https://akirahayabusa.github.io/2021/07/29/02php-ji-chu-zhi-wang-zhan-ji-ben-gai-nian/"/>
-    <id>https://akirahayabusa.github.io/2021/07/29/02php-ji-chu-zhi-wang-zhan-ji-ben-gai-nian/</id>
-    <published>2021-07-29T14:15:13.000Z</published>
-    <updated>2021-08-03T08:59:06.090Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-网站基本概念&quot;&gt;&lt;a href=&quot;#1-网站基本概念&quot; class=&quot;headerlink&quot; title=&quot;1.网站基本概念&quot;&gt;&lt;/a&gt;1.网站基本概念&lt;/h2&gt;&lt;h3 id=&quot;1-服务器概念&quot;&gt;&lt;a href=&quot;#1-服务器概念&quot;</summary>
-        
-      
     
     
     

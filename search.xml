@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>git常见问题集</title>
+      <link href="/2021/08/31/git-chang-jian-wen-ti-ji/"/>
+      <url>/2021/08/31/git-chang-jian-wen-ti-ji/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-Git报错：OpenSSL-SSL-read-Connection-was-reset-errno-10054"><a href="#1-Git报错：OpenSSL-SSL-read-Connection-was-reset-errno-10054" class="headerlink" title="1.Git报错：OpenSSL SSL_read: Connection was reset, errno 10054"></a>1.Git报错：OpenSSL SSL_read: Connection was reset, errno 10054</h2><ul><li>打开Git命令页面，执行git命令脚本：修改设置，解除ssl验证</li></ul><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslVerify "false"</span><br></pre></td></tr></tbody></table></figure><p>如果无效也可能是网络不稳定引起。</p><h2 id="2-git合并两个不相关的仓库"><a href="#2-git合并两个不相关的仓库" class="headerlink" title="2.git合并两个不相关的仓库"></a>2.git合并两个不相关的仓库</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge xxx --allow-unrelated-histories</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发常见问题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> 常见错误 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>01JWT原理+token分析</title>
       <link href="/2021/08/29/01jwt-yuan-li-token-fen-xi/"/>
       <url>/2021/08/29/01jwt-yuan-li-token-fen-xi/</url>
