@@ -3,11 +3,11 @@
   <title>哈雅布撒的博客</title>
   
   <subtitle>哈雅布撒的博客</subtitle>
-  <link href="https://akirahayabusa.gitee.io/akirahayabusa/atom.xml" rel="self"/>
+  <link href="https://akirahayabusa.github.io/atom.xml" rel="self"/>
   
-  <link href="https://akirahayabusa.gitee.io/akirahayabusa/"/>
+  <link href="https://akirahayabusa.github.io/"/>
   <updated>2021-08-31T07:59:04.800Z</updated>
-  <id>https://akirahayabusa.gitee.io/akirahayabusa/</id>
+  <id>https://akirahayabusa.github.io/</id>
   
   <author>
     <name>哈雅布撒</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>01JWT原理+token分析</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/29/01jwt-yuan-li-token-fen-xi/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/29/01jwt-yuan-li-token-fen-xi/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/29/01jwt-yuan-li-token-fen-xi/"/>
+    <id>https://akirahayabusa.github.io/2021/08/29/01jwt-yuan-li-token-fen-xi/</id>
     <published>2021-08-29T15:28:30.000Z</published>
     <updated>2021-08-31T07:59:04.800Z</updated>
     
@@ -35,23 +35,23 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="JWT" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/JWT/"/>
+    <category term="JWT" scheme="https://akirahayabusa.github.io/tags/JWT/"/>
     
-    <category term="token" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/token/"/>
+    <category term="token" scheme="https://akirahayabusa.github.io/tags/token/"/>
     
-    <category term="java" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/java/"/>
+    <category term="java" scheme="https://akirahayabusa.github.io/tags/java/"/>
     
-    <category term="状态保存" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E7%8A%B6%E6%80%81%E4%BF%9D%E5%AD%98/"/>
+    <category term="状态保存" scheme="https://akirahayabusa.github.io/tags/%E7%8A%B6%E6%80%81%E4%BF%9D%E5%AD%98/"/>
     
   </entry>
   
   <entry>
     <title>01消息队列</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/29/01-xiao-xi-dui-lie/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/29/01-xiao-xi-dui-lie/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/29/01-xiao-xi-dui-lie/"/>
+    <id>https://akirahayabusa.github.io/2021/08/29/01-xiao-xi-dui-lie/</id>
     <published>2021-08-29T06:10:57.000Z</published>
     <updated>2021-08-29T12:07:32.637Z</updated>
     
@@ -66,17 +66,17 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="微信小程序" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <category term="微信小程序" scheme="https://akirahayabusa.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>03分布式之dubbo高级特性</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/27/03-fen-bu-shi-zhi-dubbo-gao-ji-te-xing/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/27/03-fen-bu-shi-zhi-dubbo-gao-ji-te-xing/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/27/03-fen-bu-shi-zhi-dubbo-gao-ji-te-xing/"/>
+    <id>https://akirahayabusa.github.io/2021/08/27/03-fen-bu-shi-zhi-dubbo-gao-ji-te-xing/</id>
     <published>2021-08-27T13:06:48.000Z</published>
     <updated>2021-08-28T15:26:15.529Z</updated>
     
@@ -91,19 +91,19 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="分布式" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    <category term="分布式" scheme="https://akirahayabusa.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
-    <category term="dubbo" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/dubbo/"/>
+    <category term="dubbo" scheme="https://akirahayabusa.github.io/tags/dubbo/"/>
     
   </entry>
   
   <entry>
     <title>02分布式之dubbo概述</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/26/02-fen-bu-shi-zhi-dubbo-gai-shu/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/26/02-fen-bu-shi-zhi-dubbo-gai-shu/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/26/02-fen-bu-shi-zhi-dubbo-gai-shu/"/>
+    <id>https://akirahayabusa.github.io/2021/08/26/02-fen-bu-shi-zhi-dubbo-gai-shu/</id>
     <published>2021-08-26T06:03:17.000Z</published>
     <updated>2021-08-27T13:03:58.733Z</updated>
     
@@ -119,19 +119,19 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="分布式" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    <category term="分布式" scheme="https://akirahayabusa.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
-    <category term="dubbo" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/dubbo/"/>
+    <category term="dubbo" scheme="https://akirahayabusa.github.io/tags/dubbo/"/>
     
   </entry>
   
   <entry>
     <title>01分布式系统相关概念</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/25/01-fen-bu-shi-xi-tong-xiang-guan-gai-nian/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/25/01-fen-bu-shi-xi-tong-xiang-guan-gai-nian/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/25/01-fen-bu-shi-xi-tong-xiang-guan-gai-nian/"/>
+    <id>https://akirahayabusa.github.io/2021/08/25/01-fen-bu-shi-xi-tong-xiang-guan-gai-nian/</id>
     <published>2021-08-25T10:30:06.000Z</published>
     <updated>2021-08-25T14:19:27.919Z</updated>
     
@@ -146,19 +146,19 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="分布式" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    <category term="分布式" scheme="https://akirahayabusa.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
-    <category term="dubbo" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/dubbo/"/>
+    <category term="dubbo" scheme="https://akirahayabusa.github.io/tags/dubbo/"/>
     
   </entry>
   
   <entry>
     <title>01初始容器化技术docker</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/25/01-chu-shi-rong-qi-hua-ji-zhu-docker/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/25/01-chu-shi-rong-qi-hua-ji-zhu-docker/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/25/01-chu-shi-rong-qi-hua-ji-zhu-docker/"/>
+    <id>https://akirahayabusa.github.io/2021/08/25/01-chu-shi-rong-qi-hua-ji-zhu-docker/</id>
     <published>2021-08-25T08:52:04.000Z</published>
     <updated>2021-08-25T09:16:31.563Z</updated>
     
@@ -174,19 +174,19 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="容器" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E5%AE%B9%E5%99%A8/"/>
+    <category term="容器" scheme="https://akirahayabusa.github.io/tags/%E5%AE%B9%E5%99%A8/"/>
     
-    <category term="docker" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/docker/"/>
+    <category term="docker" scheme="https://akirahayabusa.github.io/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>02鸿蒙-HarmonyOS-应用开发入门</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/13/02-hong-meng-harmonyos-ying-yong-kai-fa-ru-men/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/13/02-hong-meng-harmonyos-ying-yong-kai-fa-ru-men/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/13/02-hong-meng-harmonyos-ying-yong-kai-fa-ru-men/"/>
+    <id>https://akirahayabusa.github.io/2021/08/13/02-hong-meng-harmonyos-ying-yong-kai-fa-ru-men/</id>
     <published>2021-08-13T11:45:01.000Z</published>
     <updated>2021-08-25T14:09:56.010Z</updated>
     
@@ -201,19 +201,19 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="鸿蒙" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E9%B8%BF%E8%92%99/"/>
+    <category term="鸿蒙" scheme="https://akirahayabusa.github.io/tags/%E9%B8%BF%E8%92%99/"/>
     
-    <category term="HarmonyOS" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/HarmonyOS/"/>
+    <category term="HarmonyOS" scheme="https://akirahayabusa.github.io/tags/HarmonyOS/"/>
     
   </entry>
   
   <entry>
     <title>忍者龙剑传1（西格玛，黑之章）应对策略</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/13/ren-zhe-long-jian-chuan-1-xi-ge-ma-hei-zhi-zhang-ying-dui-ce-lue/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/13/ren-zhe-long-jian-chuan-1-xi-ge-ma-hei-zhi-zhang-ying-dui-ce-lue/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/13/ren-zhe-long-jian-chuan-1-xi-ge-ma-hei-zhi-zhang-ying-dui-ce-lue/"/>
+    <id>https://akirahayabusa.github.io/2021/08/13/ren-zhe-long-jian-chuan-1-xi-ge-ma-hei-zhi-zhang-ying-dui-ce-lue/</id>
     <published>2021-08-13T02:09:53.000Z</published>
     <updated>2021-08-13T02:53:42.744Z</updated>
     
@@ -229,17 +229,17 @@
     
     
     
-    <category term="游戏杂谈" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E6%B8%B8%E6%88%8F%E6%9D%82%E8%B0%88/"/>
+    <category term="游戏杂谈" scheme="https://akirahayabusa.github.io/categories/%E6%B8%B8%E6%88%8F%E6%9D%82%E8%B0%88/"/>
     
     
-    <category term="忍者龙剑传" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E5%BF%8D%E8%80%85%E9%BE%99%E5%89%91%E4%BC%A0/"/>
+    <category term="忍者龙剑传" scheme="https://akirahayabusa.github.io/tags/%E5%BF%8D%E8%80%85%E9%BE%99%E5%89%91%E4%BC%A0/"/>
     
   </entry>
   
   <entry>
     <title>01鸿蒙(HarmonyOS)应用开发入门</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/07/01-hong-meng-harmonyos-ying-yong-kai-fa-ru-men/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/07/01-hong-meng-harmonyos-ying-yong-kai-fa-ru-men/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/07/01-hong-meng-harmonyos-ying-yong-kai-fa-ru-men/"/>
+    <id>https://akirahayabusa.github.io/2021/08/07/01-hong-meng-harmonyos-ying-yong-kai-fa-ru-men/</id>
     <published>2021-08-07T12:54:11.000Z</published>
     <updated>2021-08-13T11:42:37.703Z</updated>
     
@@ -254,19 +254,19 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="鸿蒙" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E9%B8%BF%E8%92%99/"/>
+    <category term="鸿蒙" scheme="https://akirahayabusa.github.io/tags/%E9%B8%BF%E8%92%99/"/>
     
-    <category term="HarmonyOS" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/HarmonyOS/"/>
+    <category term="HarmonyOS" scheme="https://akirahayabusa.github.io/tags/HarmonyOS/"/>
     
   </entry>
   
   <entry>
     <title>鸿蒙(HarmonyOS)应用开发路线</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/07/00-hong-meng-harmonyos-ying-yong-kai-fa-lu-xian/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/07/00-hong-meng-harmonyos-ying-yong-kai-fa-lu-xian/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/07/00-hong-meng-harmonyos-ying-yong-kai-fa-lu-xian/"/>
+    <id>https://akirahayabusa.github.io/2021/08/07/00-hong-meng-harmonyos-ying-yong-kai-fa-lu-xian/</id>
     <published>2021-08-07T12:26:05.000Z</published>
     <updated>2021-08-07T12:58:12.057Z</updated>
     
@@ -281,19 +281,19 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="鸿蒙" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E9%B8%BF%E8%92%99/"/>
+    <category term="鸿蒙" scheme="https://akirahayabusa.github.io/tags/%E9%B8%BF%E8%92%99/"/>
     
-    <category term="HarmonyOS" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/HarmonyOS/"/>
+    <category term="HarmonyOS" scheme="https://akirahayabusa.github.io/tags/HarmonyOS/"/>
     
   </entry>
   
   <entry>
     <title>nodejs之Express框架</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/05/nodejs-zhi-express-kuang-jia/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/05/nodejs-zhi-express-kuang-jia/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/05/nodejs-zhi-express-kuang-jia/"/>
+    <id>https://akirahayabusa.github.io/2021/08/05/nodejs-zhi-express-kuang-jia/</id>
     <published>2021-08-04T16:00:40.000Z</published>
     <updated>2021-08-06T12:51:59.862Z</updated>
     
@@ -308,17 +308,17 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="nodejs" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/nodejs/"/>
+    <category term="nodejs" scheme="https://akirahayabusa.github.io/tags/nodejs/"/>
     
   </entry>
   
   <entry>
     <title>nodejs之常用第三方模块</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/03/nodejs-zhi-chang-yong-di-san-fang-mo-kuai/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/03/nodejs-zhi-chang-yong-di-san-fang-mo-kuai/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/03/nodejs-zhi-chang-yong-di-san-fang-mo-kuai/"/>
+    <id>https://akirahayabusa.github.io/2021/08/03/nodejs-zhi-chang-yong-di-san-fang-mo-kuai/</id>
     <published>2021-08-03T10:00:38.000Z</published>
     <updated>2021-08-05T10:35:04.765Z</updated>
     
@@ -333,17 +333,17 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="nodejs" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/nodejs/"/>
+    <category term="nodejs" scheme="https://akirahayabusa.github.io/tags/nodejs/"/>
     
   </entry>
   
   <entry>
     <title>maven以及npm依赖查找</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/03/maven-yi-ji-npm-yi-lai-cha-zhao/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/03/maven-yi-ji-npm-yi-lai-cha-zhao/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/03/maven-yi-ji-npm-yi-lai-cha-zhao/"/>
+    <id>https://akirahayabusa.github.io/2021/08/03/maven-yi-ji-npm-yi-lai-cha-zhao/</id>
     <published>2021-08-03T05:55:57.000Z</published>
     <updated>2021-08-03T06:00:04.623Z</updated>
     
@@ -360,48 +360,17 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="技术工具" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nodejs之npm</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/03/dubbo-admin-an-zhuang/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/03/dubbo-admin-an-zhuang/</id>
-    <published>2021-08-03T05:10:58.000Z</published>
-    <updated>2021-08-28T10:01:47.831Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;一、dubbo-admin安装&quot;&gt;&lt;a href=&quot;#一、dubbo-admin安装&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="工具安装" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/"/>
-    
-    
-    <category term="分布式" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
-    
-    <category term="dubbo" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/dubbo/"/>
-    
-    <category term="集群" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E9%9B%86%E7%BE%A4/"/>
-    
-    <category term="微服务" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    <category term="技术工具" scheme="https://akirahayabusa.github.io/tags/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>nodejs之npm</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/03/zookeeper-an-zhuang/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/03/zookeeper-an-zhuang/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/03/zookeeper-an-zhuang/"/>
+    <id>https://akirahayabusa.github.io/2021/08/03/zookeeper-an-zhuang/</id>
     <published>2021-08-03T05:10:58.000Z</published>
     <updated>2021-08-28T10:01:12.087Z</updated>
     
@@ -416,23 +385,54 @@
     
     
     
-    <category term="工具安装" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/"/>
+    <category term="工具安装" scheme="https://akirahayabusa.github.io/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/"/>
     
     
-    <category term="分布式" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    <category term="分布式" scheme="https://akirahayabusa.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
-    <category term="集群" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E9%9B%86%E7%BE%A4/"/>
+    <category term="zookeeper" scheme="https://akirahayabusa.github.io/tags/zookeeper/"/>
     
-    <category term="微服务" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    <category term="集群" scheme="https://akirahayabusa.github.io/tags/%E9%9B%86%E7%BE%A4/"/>
     
-    <category term="zookeeper" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/zookeeper/"/>
+    <category term="微服务" scheme="https://akirahayabusa.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
   <entry>
     <title>nodejs之npm</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/03/nodejs-zhi-npm/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/03/nodejs-zhi-npm/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/03/dubbo-admin-an-zhuang/"/>
+    <id>https://akirahayabusa.github.io/2021/08/03/dubbo-admin-an-zhuang/</id>
+    <published>2021-08-03T05:10:58.000Z</published>
+    <updated>2021-08-28T10:01:47.831Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、dubbo-admin安装&quot;&gt;&lt;a href=&quot;#一、dubbo-admin安装&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="工具安装" scheme="https://akirahayabusa.github.io/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="分布式" scheme="https://akirahayabusa.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+    <category term="dubbo" scheme="https://akirahayabusa.github.io/tags/dubbo/"/>
+    
+    <category term="集群" scheme="https://akirahayabusa.github.io/tags/%E9%9B%86%E7%BE%A4/"/>
+    
+    <category term="微服务" scheme="https://akirahayabusa.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nodejs之npm</title>
+    <link href="https://akirahayabusa.github.io/2021/08/03/nodejs-zhi-npm/"/>
+    <id>https://akirahayabusa.github.io/2021/08/03/nodejs-zhi-npm/</id>
     <published>2021-08-03T05:10:58.000Z</published>
     <updated>2021-08-03T09:05:38.119Z</updated>
     
@@ -447,17 +447,17 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="nodejs" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/nodejs/"/>
+    <category term="nodejs" scheme="https://akirahayabusa.github.io/tags/nodejs/"/>
     
   </entry>
   
   <entry>
     <title>01nodejs入门</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/08/01/nodejs-ru-men/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/08/01/nodejs-ru-men/</id>
+    <link href="https://akirahayabusa.github.io/2021/08/01/nodejs-ru-men/"/>
+    <id>https://akirahayabusa.github.io/2021/08/01/nodejs-ru-men/</id>
     <published>2021-08-01T04:41:14.000Z</published>
     <updated>2021-08-05T12:44:31.855Z</updated>
     
@@ -473,17 +473,17 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="nodejs" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/nodejs/"/>
+    <category term="nodejs" scheme="https://akirahayabusa.github.io/tags/nodejs/"/>
     
   </entry>
   
   <entry>
     <title>01微信小程序介绍及环境准备</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/07/30/01-wei-xin-xiao-cheng-xu-jie-shao-ji-huan-jing-zhun-bei/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/07/30/01-wei-xin-xiao-cheng-xu-jie-shao-ji-huan-jing-zhun-bei/</id>
+    <link href="https://akirahayabusa.github.io/2021/07/30/01-wei-xin-xiao-cheng-xu-jie-shao-ji-huan-jing-zhun-bei/"/>
+    <id>https://akirahayabusa.github.io/2021/07/30/01-wei-xin-xiao-cheng-xu-jie-shao-ji-huan-jing-zhun-bei/</id>
     <published>2021-07-30T04:04:13.000Z</published>
     <updated>2021-08-03T08:58:28.174Z</updated>
     
@@ -498,34 +498,34 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="微信小程序" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <category term="微信小程序" scheme="https://akirahayabusa.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>03php基础之环境搭建</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/07/30/03php-ji-chu-zhi-huan-jing-da-jian/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/07/30/03php-ji-chu-zhi-huan-jing-da-jian/</id>
+    <link href="https://akirahayabusa.github.io/2021/07/30/03php-ji-chu-zhi-huan-jing-da-jian/"/>
+    <id>https://akirahayabusa.github.io/2021/07/30/03php-ji-chu-zhi-huan-jing-da-jian/</id>
     <published>2021-07-30T01:31:02.000Z</published>
     <updated>2021-08-19T13:48:56.062Z</updated>
     
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="设计模式" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://akirahayabusa.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>02php基础之网站基本概念</title>
-    <link href="https://akirahayabusa.gitee.io/akirahayabusa/2021/07/29/02php-ji-chu-zhi-wang-zhan-ji-ben-gai-nian/"/>
-    <id>https://akirahayabusa.gitee.io/akirahayabusa/2021/07/29/02php-ji-chu-zhi-wang-zhan-ji-ben-gai-nian/</id>
+    <link href="https://akirahayabusa.github.io/2021/07/29/02php-ji-chu-zhi-wang-zhan-ji-ben-gai-nian/"/>
+    <id>https://akirahayabusa.github.io/2021/07/29/02php-ji-chu-zhi-wang-zhan-ji-ben-gai-nian/</id>
     <published>2021-07-29T14:15:13.000Z</published>
     <updated>2021-08-03T08:59:06.090Z</updated>
     
@@ -540,10 +540,10 @@
     
     
     
-    <category term="学习笔记" scheme="https://akirahayabusa.gitee.io/akirahayabusa/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://akirahayabusa.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="设计模式" scheme="https://akirahayabusa.gitee.io/akirahayabusa/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://akirahayabusa.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
