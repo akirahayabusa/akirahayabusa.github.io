@@ -1,0 +1,1392 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Zookeeper概述, 哈雅布撒的博客">
+    <meta name="description" content="Hello,here is HYBS&#39;s blog">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Zookeeper概述 | 哈雅布撒的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="哈雅布撒的博客" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">哈雅布撒的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">哈雅布撒的博客</div>
+        <div class="logo-desc">
+            
+            Hello,here is HYBS&#39;s blog
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/akirahayabusa" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/akirahayabusa" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/article/static/image/20210209/01.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Zookeeper概述</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
+                                <span class="chip bg-color">分布式</span>
+                            </a>
+                        
+                            <a href="/tags/zookeeper/">
+                                <span class="chip bg-color">zookeeper</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9B%86%E7%BE%A4/">
+                                <span class="chip bg-color">集群</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                                <span class="chip bg-color">微服务</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/" class="post-category">
+                                工具安装
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-09-01
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-09-07
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+                    <!--id="busuanzi_container_page_pv"   -->
+                    <div class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="1-初识Zookeeper"><a href="#1-初识Zookeeper" class="headerlink" title="1.初识Zookeeper"></a>1.初识Zookeeper</h2><h3 id="1-1Zookeeper概念"><a href="#1-1Zookeeper概念" class="headerlink" title="1.1Zookeeper概念"></a>1.1Zookeeper概念</h3><ul>
+<li><p>Zookeeper是Apache Hadoop（大数据相关框架）项目下的一个子项目，是一个树形目录服务</p>
+</li>
+<li><p>Zookeeper翻译过来就是动物园管理员，它是用来管理Hadoop(大象)、Hive(蜜蜂)、Pig(小猪)的管理员。简称zk</p>
+</li>
+<li><p>Zookeeper是一个分布式的、开源的分布式应用程序打的协调服务。</p>
+</li>
+<li><p>Zookeeper 提供的主要功能包括：</p>
+<ul>
+<li>配置管理</li>
+</ul>
+<p><img src="/medias/article/01zookeeper/image-20210901105631484.png" alt="image-20210901105631484"></p>
+<ul>
+<li>分布式锁</li>
+</ul>
+<p><img src="/medias/article/01zookeeper/image-20210901183325658.png" alt="image-20210901183325658"></p>
+<ul>
+<li>集群管理</li>
+</ul>
+</li>
+</ul>
+<p><img src="/medias/article/01zookeeper/image-20210901183457882.png" alt="image-20210901183457882"></p>
+<h2 id="2-Zookeeper命令操作"><a href="#2-Zookeeper命令操作" class="headerlink" title="2.Zookeeper命令操作"></a>2.Zookeeper命令操作</h2><h3 id="2-1数据模型"><a href="#2-1数据模型" class="headerlink" title="2.1数据模型"></a>2.1数据模型</h3><ul>
+<li>Zookeeper是一个树形目录服务，其数据模型和Unix的文件系统目录树很类似，拥有一个层次化结构。</li>
+<li>这里的每一个节点都被称为ZNode,每个节点上都会保存自己的数据和节点信息。</li>
+<li>节点可以拥有子节点，同时也也允许少量（1MB）数据存储在该节点之下。</li>
+<li>节点可以分为四大类：<ol>
+<li>PERSISTENT 持久化节点</li>
+<li>EPHEMERAL 临时节点：-e</li>
+<li>PERSISTENT_SEQUENTIAL 持久化顺序节点:-s</li>
+<li>EPHEMERAL_SEQUENTIAL 临时顺序节点: -es</li>
+</ol>
+</li>
+</ul>
+<p><img src="/medias/article/01zookeeper/image-20210901184831866.png" alt="image-20210901184831866"></p>
+<h3 id="2-2服务端常用命令"><a href="#2-2服务端常用命令" class="headerlink" title="2.2服务端常用命令"></a>2.2服务端常用命令</h3><p><img src="/medias/article/01zookeeper/image-20210903211709275.png" alt="image-20210903211709275"></p>
+<ul>
+<li>启动 Zookeeper服务： ./zkServer.sh start</li>
+<li>查看 Zookeeper服务： ./zkServer.sh status</li>
+<li>停止 Zookeeper服务： ./zkServer.sh stop</li>
+<li>重启 Zookeeper服务:    ./zkServer.sh restart</li>
+</ul>
+<h3 id="2-3客户端常用命令"><a href="#2-3客户端常用命令" class="headerlink" title="2.3客户端常用命令"></a>2.3客户端常用命令</h3><ol>
+<li><p>启动客户端：       </p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./zkCli.sh [-server 192.168.66.66.2181] </span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>退出：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">quit</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>查看节点目录：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /[xxx]</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>创建节点:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create /[xxx]/xxx2 hy    不能重复创建节点</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>获取节点数据 :</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get /[xxxx]</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>设置数据 :</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set /[xxx]  hy</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>删除节点 </p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete /[xxx]        节点有子节点不能直接delete需要使用deleteall</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>创建临时节点（客户端断开再次打开失效）：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create -e /[xxx]/xxx2</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>创建顺序节点（同一个节点名编号不同，所有节点共用一个编号）</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create -s /[xxx]/xxx2</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>ls2 和 ls-s 都可以查看详细信息，ls2已经淘汰</p>
+</li>
+</ol>
+<p>注：userservice下存放的数据是服务ip地址</p>
+<p><img src="/medias/article/01zookeeper/image-20210903230359803.png" alt="image-20210903230359803"></p>
+<h2 id="3-javaAPI操作"><a href="#3-javaAPI操作" class="headerlink" title="3.javaAPI操作"></a>3.javaAPI操作</h2><h3 id="3-1Curator-介绍"><a href="#3-1Curator-介绍" class="headerlink" title="3.1Curator 介绍"></a>3.1Curator 介绍</h3><ul>
+<li>Curator是Apache Zookeeper的java客户端库。</li>
+<li>常见的Zookeeper java API:<ul>
+<li>原生Java API</li>
+<li>ZkClient</li>
+<li>Curator</li>
+</ul>
+</li>
+<li>Curator项目的目标是简化Zookeeper客户端的使用</li>
+<li>Curator最初是Netfix研发的，后来捐献了Apache基金会，目前是Apache的顶级项目。</li>
+<li><a target="_blank" rel="noopener" href="http://curator.apache.org/">官网</a></li>
+<li>高版本的Curator兼容低版本的Zookeeper,低版本的Curator不能兼容高版本的Zookeeper<h3 id="3-2Curator-API-常用操作"><a href="#3-2Curator-API-常用操作" class="headerlink" title="3.2Curator API 常用操作"></a>3.2Curator API 常用操作</h3></li>
+</ul>
+<h4 id="3-2-1-建立连接"><a href="#3-2-1-建立连接" class="headerlink" title="3.2.1 建立连接"></a>3.2.1 建立连接</h4><ul>
+<li><p>第一种方式</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">    /**</span><br><span class="line">     * 建立连接</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void testConnect(){</span><br><span class="line">//        第一种方式</span><br><span class="line">        /**</span><br><span class="line">         * @param connectString    连接字符串。zk server 地址和端口 "192.168.66.66:2181,192.168.66.66:2181"</span><br><span class="line">         * @param sessionTimeoutMs    会话超时事件单位毫秒</span><br><span class="line">         * @param connectionTimeoutMS   连接超时事件单位毫秒</span><br><span class="line">         * @param retryPolicy    重试策略：重试一次，重试多次，一直重试，间隔重试等</span><br><span class="line">         */</span><br><span class="line">//        每隔三秒重试一次一共重试十次</span><br><span class="line">        RetryPolicy retryPolicy=new ExponentialBackoffRetry(3000,10);</span><br><span class="line">        CuratorFramework client = CuratorFrameworkFactory.newClient("192.168.66.66:2181", 60000, 15000, retryPolicy);</span><br><span class="line">//        开启连接</span><br><span class="line">        client.start();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>第二种方式</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">    /**</span><br><span class="line">     * 建立连接</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void testConnect(){</span><br><span class="line">//        第二种方式</span><br><span class="line">        /**</span><br><span class="line">         * @param connectString    连接字符串。zk server 地址和端口 "192.168.66.66:2181,192.168.66.66:2181"</span><br><span class="line">         * @param sessionTimeoutMs    会话超时事件单位毫秒</span><br><span class="line">         * @param connectionTimeoutMS   连接超时事件单位毫秒</span><br><span class="line">         * @param retryPolicy    重试策略：重试一次，重试多次，一直重试，间隔重试等</span><br><span class="line">         */</span><br><span class="line">//        每隔三秒重试一次一共重试十次</span><br><span class="line">        RetryPolicy retryPolicy=new ExponentialBackoffRetry(3000,10);</span><br><span class="line">//        名称空间，自动加根节点</span><br><span class="line">        CuratorFramework client = CuratorFrameworkFactory.builder().connectString("192.168.66.66:2181").sessionTimeoutMs(60000).connectionTimeoutMs(15000).retryPolicy(retryPolicy).namespace("hy").build();</span><br><span class="line">        client.start();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>注：执行完记得调用close方法关闭client。</p>
+<h4 id="3-2-2-创建节点"><a href="#3-2-2-创建节点" class="headerlink" title="3.2.2 创建节点"></a>3.2.2 创建节点</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    @Test</span><br><span class="line">    public void testCrete() throws Exception {</span><br><span class="line">//        1.基本创建</span><br><span class="line">//        如果创建节点，没有指定数据，则默认将当前客户端的ip地址作为数据储存</span><br><span class="line">        String path = client.create().forPath("/app1");</span><br><span class="line">//        2.带有数据</span><br><span class="line">        String path2 = client.create().forPath("/app2","jiamianqishi".getBytes());</span><br><span class="line">//      3.设置节点的类型(默认：持久化)</span><br><span class="line">        String path3 = client.create().withMode(CreateMode.EPHEMERAL).forPath("/app3","jiamianqishi2".getBytes());</span><br><span class="line">//        4.创建多级节点 /app1/p1</span><br><span class="line">        String path4 = client.create().creatingParentsIfNeeded().forPath("/app4/app4_1","jiamianqishi2".getBytes());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="3-2-3-删除节点"><a href="#3-2-3-删除节点" class="headerlink" title="3.2.3 删除节点"></a>3.2.3 删除节点</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">    /**delete\deleteall</span><br><span class="line">     * 1.删除单个节点</span><br><span class="line">     * 2.删除带有子节点的节点</span><br><span class="line">     * 3.必须成功的删除</span><br><span class="line">     * 4.回调</span><br><span class="line">     * @throws Exception</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void testdelete() throws Exception {</span><br><span class="line">        //1.删除单个节点</span><br><span class="line">        client.delete().forPath("/app1");</span><br><span class="line">//        2.删除带有子节点的节点</span><br><span class="line">        client.delete().deletingChildrenIfNeeded().forPath("/app4");</span><br><span class="line">//        3.必须成功的删除为了解决发送过程中客户端和服务端连接抖动可能会导致删除失败</span><br><span class="line">        client.delete().guaranteed().forPath("/app2");</span><br><span class="line">//        4.回调，删除操作后执行回调函数</span><br><span class="line">        client.delete().guaranteed().inBackground(new BackgroundCallback() {</span><br><span class="line">            @Override</span><br><span class="line">            public void processResult(CuratorFramework curatorFramework, CuratorEvent curatorEvent) throws Exception {</span><br><span class="line">                System.out.println("我被删除了");</span><br><span class="line">                System.out.println(curatorEvent);</span><br><span class="line">            }</span><br><span class="line">        }).forPath("/app2");</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="3-2-4-修改节点"><a href="#3-2-4-修改节点" class="headerlink" title="3.2.4 修改节点"></a>3.2.4 修改节点</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">  /**</span><br><span class="line">     * 修改：</span><br><span class="line">     * 1.普通修改：</span><br><span class="line">     * 2.版本校验修改</span><br><span class="line">     * @throws Exception</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void testset() throws Exception {</span><br><span class="line">//        1普通修改</span><br><span class="line">        client.setData().forPath("/app1","ryu".getBytes());</span><br><span class="line">//        2.版本校验修改,目的是其他线程或客户端不能干扰</span><br><span class="line">//        2.1从状态信息中获取版本信息</span><br><span class="line"></span><br><span class="line">        Stat status=new Stat();</span><br><span class="line"></span><br><span class="line">        client.getData().storingStatIn(status).forPath("/app1");</span><br><span class="line">        int version=status.getVersion();</span><br><span class="line">//        2.2修改时校验版本，如果版本没变就能修改</span><br><span class="line">        client.setData().withVersion(version).forPath("/app1","long".getBytes());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="3-2-5-查询节点"><a href="#3-2-5-查询节点" class="headerlink" title="3.2.5 查询节点"></a>3.2.5 查询节点</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">   /**</span><br><span class="line">     * 查询节点：</span><br><span class="line">     * 1.查询数据：get</span><br><span class="line">     * 2.查询子节点：ls</span><br><span class="line">     * 3.查询详细信息： ls -s</span><br><span class="line">     * @throws Exception</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">public void testGet1() throws Exception {</span><br><span class="line">//        1.查询数据:get</span><br><span class="line">        byte []data=client.getData().forPath("/app1");</span><br><span class="line">        System.out.println(new String(data));</span><br><span class="line">//        2.查询子节点：ls</span><br><span class="line">        List&lt;String&gt; list = client.getChildren().forPath("/");</span><br><span class="line">        System.out.println(list);</span><br><span class="line">//        3.查询状态信息</span><br><span class="line">        Stat status=new Stat();</span><br><span class="line">        client.getData().storingStatIn(status).forPath("/app1");</span><br><span class="line">//        节点的状态信息打印</span><br><span class="line">        System.out.println(status);</span><br><span class="line">    }</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h4 id="3-2-6-Watch事件监听"><a href="#3-2-6-Watch事件监听" class="headerlink" title="3.2.6 Watch事件监听"></a>3.2.6 Watch事件监听</h4><ul>
+<li><p>Zookeeper允许用户在指定节点上注册一些Watcher,并且在一些特定事件触发的时候，Zookeeper服务端会将事件通知到感兴趣的客户端上去，该机制时Zookeeper实现分布式协调服务的重要特性。</p>
+</li>
+<li><p>Zookeeper中引入了Watcher机制来实现了发布\订阅功能，能够让多个订阅者同时监听某一个对象，当一个对象自身状态变化时，会通知所有订阅者。</p>
+</li>
+<li><p>Zookeeper原生支持通过注册watcher来进行事件监听，但是其使用并不是特别方便需要开发人员自己反复注册watcher，比较繁琐。</p>
+</li>
+<li><p>Curator引入了Cache来实现对Zookeeper服务端事件的监听。</p>
+</li>
+<li><p>Zookeeper提供了三种Watcher:</p>
+<ol>
+<li>NodeCache:只监听某一个特定的节点</li>
+</ol>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">    /**</span><br><span class="line">     * NodeCache: 给指定一个节点注册监听器</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void testNodeCache() throws Exception {</span><br><span class="line">//        1.创建NodeCache对象</span><br><span class="line">//        参数：客户端     节点    是否压缩</span><br><span class="line">        NodeCache nodeCache=new NodeCache(client, "/app1",false);</span><br><span class="line">//        2.注册监听</span><br><span class="line">        nodeCache.getListenable().addListener(new NodeCacheListener() {</span><br><span class="line">            @Override</span><br><span class="line">            public void nodeChanged() throws Exception {</span><br><span class="line">                System.out.println("节点变化了");</span><br><span class="line">                byte[] app1Datas = client.getData().forPath("/app1");</span><br><span class="line">                System.out.println(new String(app1Datas));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            }</span><br><span class="line">        });</span><br><span class="line">//        3.开启监听 如果设置为true,则开启监听时加载缓存数据</span><br><span class="line">        nodeCache.start(true);</span><br><span class="line"></span><br><span class="line">        while (true){</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>PathChildrenCache:监控一个ZNode的子节点</li>
+</ol>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">    /**</span><br><span class="line">     * PathChildrenCache: 给指定一个节点注册监听器</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void tesPathChildrenCache() throws Exception {</span><br><span class="line">//        1.参数列表：客户端对象、节点、是否缓存数据、是否压缩、线程池</span><br><span class="line">//        创建PathChildrenCache对象</span><br><span class="line">        PathChildrenCache pathChildrenCache=new PathChildrenCache(client,"/app2",true);</span><br><span class="line">//        2.绑定监听器</span><br><span class="line">        pathChildrenCache.getListenable().addListener(new PathChildrenCacheListener() {</span><br><span class="line">            @Override</span><br><span class="line">            public void childEvent(CuratorFramework curatorFramework, PathChildrenCacheEvent pathChildrenCacheEvent) throws Exception {</span><br><span class="line">                if (pathChildrenCacheEvent.getType()== PathChildrenCacheEvent.Type.CONNECTION_RECONNECTED){</span><br><span class="line">                    System.out.println("重新连接了");</span><br><span class="line">                }</span><br><span class="line">                else if(pathChildrenCacheEvent.getType().equals(PathChildrenCacheEvent.Type.CHILD_UPDATED)){</span><br><span class="line">                    System.out.println("数据变化了");</span><br><span class="line">                    System.out.println(pathChildrenCacheEvent.getData());</span><br><span class="line">                    System.out.println(new String(pathChildrenCacheEvent.getData().getData()));</span><br><span class="line"></span><br><span class="line">                }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            }</span><br><span class="line">        });</span><br><span class="line">        pathChildrenCache.start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        while (true){</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="3">
+<li>TreeCache:可以监控整个树上所有的节点（本身和自身的子节点），类似于NodeCache和PathChildrenCache的组合</li>
+</ol>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">    /**</span><br><span class="line">     * TreeCache: 监听某个节点自己和所有子节点们</span><br><span class="line">     */</span><br><span class="line">    @Test</span><br><span class="line">    public void testTreeCache() throws Exception {</span><br><span class="line">//        1.参数列表：客户端对象、节点</span><br><span class="line">//        创建TreeCache对象</span><br><span class="line">        TreeCache treeCache=new TreeCache(client,"/app2");</span><br><span class="line">//        2.绑定监听器</span><br><span class="line">        treeCache.getListenable().addListener(new TreeCacheListener() {</span><br><span class="line">                                                  @Override</span><br><span class="line">                                                  public void childEvent(CuratorFramework curatorFramework, TreeCacheEvent treeCacheEvent) throws Exception {</span><br><span class="line">                                                      System.out.println("节点变化了");</span><br><span class="line">                                                      System.out.println(treeCacheEvent);</span><br><span class="line"></span><br><span class="line">                                                  }</span><br><span class="line">                                              }</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        while (true){</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
+<h3 id="3-3分布式锁"><a href="#3-3分布式锁" class="headerlink" title="3.3分布式锁"></a>3.3分布式锁</h3><ul>
+<li>在我们进行单机应用开发，涉及并发</li>
+</ul>
+<h3 id="模拟12306售票案例"><a href="#模拟12306售票案例" class="headerlink" title="模拟12306售票案例"></a>模拟12306售票案例</h3>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">哈雅布撒</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akirahayabusa.github.io/2021/09/01/zookeeper-gai-shu/">https://akirahayabusa.github.io/2021/09/01/zookeeper-gai-shu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">哈雅布撒</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">
+                                    <span class="chip bg-color">分布式</span>
+                                </a>
+                            
+                                <a href="/tags/zookeeper/">
+                                    <span class="chip bg-color">zookeeper</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9B%86%E7%BE%A4/">
+                                    <span class="chip bg-color">集群</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                                    <span class="chip bg-color">微服务</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/09/06/01-jiang-ke-da-xin-xi-an-quan-ji-zhu-wang-ke-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="01江科大信息安全技术网课笔记">
+                        
+                        <span class="card-title">01江科大信息安全技术网课笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            哈雅布撒
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/08/31/cookie-de-jian-dan-shi-yong/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/article/static/image/20210209/01.jpg" class="responsive-img" alt="cookie的简单使用">
+                        
+                        <span class="card-title">cookie的简单使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/cookie/">
+                        <span class="chip bg-color">cookie</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6929620707"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">哈雅布撒</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">38.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+                <!-- id="busuanzi_container_site_pv"  -->
+            <span>
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+                <!--  id="busuanzi_container_site_uv" -->
+            <span>
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/akiraHayabusa" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2682557218@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2682557218" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2682557218" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+
+</html>
